@@ -1,0 +1,17 @@
+.centered {
+    text-align: center;
+}
+.log {
+    font-size: small;
+}
+.bg-green-fade {
+    animation: bg-green-fade-animate 2s;
+}
+@keyframes bg-green-fade-animate {
+    from {
+        background-color: green;
+    }
+    to {
+       background-color: transparent;
+    }
+  }
