@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mike's Weather Station</title>
+    <title>Panborough Weather Station</title>
     <!--favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,61 +16,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!--moment js-->
+    <script src="dependencies/moment.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="centered">Welcome to Mike's Weather Station</h1>
+        <h1 class="centered display-3">Panborough Weather Station</h1>
+        <p class="centered" id="status" class="no-wrap"></p>
+        <p class="centered" id="error"></p>
         <div class="centered">
-            <button type="button" id="toggleAutoReload" class="btn btn-success" onClick="ui.reload.toggle()">Auto-reload: ON</button>
-            <button type="button" id="clearLog" class="btn btn-danger" onClick="api.delete.all()">Clear log</button>
+            <button type="button" id="toggleAutoReload" class="btn btn-sm btn-success" onClick="ui.reload.toggle()">Auto-reload: ON</button>
+            <button type="button" id="clearLog" class="btn btn-sm btn-secondary" onClick="ui.log.empty()">Clear log</button>
+            <button type="button" id="emptyDatabase" class="btn btn-sm btn-danger" onClick="api.delete.all()">Empty database</button>
         </div>
         <hr>
-        <div class="centered">
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column p-2 mx-2">
-                    <h4>Temperature (&#176;C)</h4>
-                    <p>Air <span id="ambient_temp"></span> | Gnd <span id="ground_temp"></span></p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-22">
-                    <h4>Pressure (mBar)</h4>
-                    <p><span id="pressure"></span></p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-2">
-                    <h4>Humidity (%)</h4>
-                    <p><span id="humidity"></span></p>
-                </div>
-            </div>
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column p-2 mx-2">
-                    <h4>Wind Speed (km/h)</h4>
-                    <p><span id="wind_speed"></span> (Gusting <span id="gust_speed"></span>)</p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-22">
-                    <h4>Wind Direction</h4>
-                    <p><span id="wind_direction"></span></p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-2">
-                    <h4>Rainfall (mm)</h4>
-                    <p><span id="rainfall"></span></p>
-                </div>
-            </div>
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column p-2 mx-2">
-                    <p>Updated: <span id="datetime"></span></p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-22">
-                    <p>Version: <span id="version"></span></p>
-                </div>
-                <div class="d-flex flex-column p-2 mx-2">
-                    <p>Comment: <span id="comment"></span></p>
-                </div>
-            </div>
-        </div>
+        <?php include 'html/monitor.html'; ?>
         <hr>
-        <h2>Log:</h2>
-        <div id="log" class="log"></div>
     </div>
+    <?php include 'html/log.html'; ?>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

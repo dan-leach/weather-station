@@ -6,7 +6,7 @@
         $k = $_GET["key"];
         $check = checkKey($k);
     }
-    if (!$check) die('{"error":"Incorrect key"}');
+    if (!$check) die('{"msg":"Incorrect key"}');
 
     //clear SQL
     require '../link.php';

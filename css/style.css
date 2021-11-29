@@ -4,8 +4,15 @@
 .log {
     font-size: small;
 }
+.log td {
+    white-space: nowrap;
+}
+.log th, td {
+    text-align: center;
+    vertical-align: middle;
+}
 .bg-green-fade {
-    animation: bg-green-fade-animate 2s;
+    animation: bg-green-fade-animate 10s;
 }
 @keyframes bg-green-fade-animate {
     from {
@@ -14,4 +21,31 @@
     to {
        background-color: transparent;
     }
-  }
+}
+.bg-red-fade {
+    animation: bg-red-fade-animate 10s;
+}
+@keyframes bg-red-fade-animate {
+    from {
+        background-color: red;
+    }
+    to {
+       background-color: transparent;
+    }
+}
+.no-wrap {
+    white-space: nowrap;
+}
+h4 {
+    font-size:1rem;
+}
+@media (min-width: 768px) {  
+    h4 {font-size:2rem;} /*1rem = 16px*/
+}
+
+.monitorSub {
+    font-size:0.75rem;
+}
+@media (min-width: 768px) {  
+    .monitorSub {font-size:1rem;} /*1rem = 16px*/
+}
