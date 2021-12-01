@@ -191,7 +191,7 @@ var api = {
             xhttp.onload = function() {
                 console.log(this.responseText);
             }
-            xhttp.open("GET", "api/error/new/?stack=" + e.stack);
+            xhttp.open("GET", "api/error/new/?source=client_side&stack=" + e.stack);
             xhttp.send();
         },
         check: function(){
