@@ -1,6 +1,5 @@
 <?php
     //should be called by script which has already opened link to database
-    $today = date('Y-m-d');
     $sql = "SELECT min(ambient_temp), max(ambient_temp), min(ground_temp), max(ground_temp), datetime FROM tbl_weather WHERE datetime >= '$today'";
 
     $result = $link->query($sql);

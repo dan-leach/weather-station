@@ -18,7 +18,12 @@ var ui = {
             document.getElementById("ground_temp_max").innerHTML = weather.minMax.ground_temp.max.toFixed(1);
 
             document.getElementById("humidity").innerHTML = weather.latest.humidity.toFixed();
+            document.getElementById("humidity_min").innerHTML = weather.minMax.humidity.min.toFixed();
+            document.getElementById("humidity_max").innerHTML = weather.minMax.humidity.max.toFixed();
+
             document.getElementById("pressure").innerHTML = weather.latest.pressure.toFixed();
+            document.getElementById("pressure_min").innerHTML = weather.minMax.pressure.min.toFixed();
+            document.getElementById("pressure_max").innerHTML = weather.minMax.pressure.max.toFixed();
 
             document.getElementById("status").classList.add("bg-green-fade");
             setTimeout(function(){ document.getElementById("status").classList.remove("bg-green-fade"); }, 10000);
@@ -47,9 +52,17 @@ var ui = {
                     ground_temp: {
                         min: 0,
                         max: 0,
+                    },
+                    pressure: {
+                        min: 0,
+                        max: 0,
+                    },
+                    humidity: {
+                        min: 0,
+                        max: 0,
                     }
                 }
-            };
+            }
             this.update(empty);
         }
     },

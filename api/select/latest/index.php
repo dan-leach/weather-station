@@ -13,8 +13,11 @@
     $rainMins = 60;
     require '../rainfall/rainMins.php';
 
-    //get temp MinMax for today
+    //get Minimums and Maximums for today
+    $today = date('Y-m-d');
     require '../temperature/dayMinMax.php';
+    require '../pressure/dayMinMax.php';
+    require '../humidity/dayMinMax.php';
 
     if ($num < 1) die();
     $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT " . $num;
@@ -59,6 +62,14 @@
                 "ground_temp": {
                     "min":' . $ground_temp_min . ',
                     "max":' . $ground_temp_max . '
+                },
+                "pressure": {
+                    "min":' . $pressure_min . ',
+                    "max":' . $pressure_max . '
+                },
+                "humidity": {
+                    "min":' . $humidity_min . ',
+                    "max":' . $humidity_max . '
                 }
             },
             "error":"' . $error . '"
