@@ -1,3 +1,4 @@
 rounding in JS
 update api/error/check server side error_log locations as new api files added
 update main.js ui.monitor.empty if data structure changes
+Add viewing and clearing of errors from client

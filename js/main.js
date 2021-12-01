@@ -191,7 +191,7 @@ var api = {
             xhttp.onload = function() {
                 console.log(this.responseText);
             }
-            xhttp.open("GET", "api/error/new/?source=client_side&stack=" + e.stack);
+            xhttp.open("GET", "api/error/new/?source=client&stack=" + e.stack);
             xhttp.send();
         },
         check: function(){
@@ -201,13 +201,17 @@ var api = {
                 try{
                     if (this.responseText == null) throw new Error("No response from api/error/check"); //throw error if no response from API
                     const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
-                    if (res.client_side_errors) {
-                        console.log("Log of client_side_errors found");
-                        document.getElementById("error").innerHTML = '<span class="badge bg-warning">Client Side Errors</span> ';
+                    if (res.client_errors) {
+                        console.log("Log of client errors found");
+                        document.getElementById("error").innerHTML = '<span class="badge bg-warning">Client Errors</span> ';
                     }
-                    if (res.server_side_errors) {
-                        console.log("Log of server_side_errors found");
-                        document.getElementById("error").innerHTML += '<span class="badge bg-warning">Server Side Errors</span>';
+                    if (res.server_errors) {
+                        console.log("Log of server errors found");
+                        document.getElementById("error").innerHTML += '<span class="badge bg-warning">Server Errors</span> ';
+                    }
+                    if (res.station_errors) {
+                        console.log("Log of station errors found");
+                        document.getElementById("error").innerHTML += '<span class="badge bg-warning">Station Errors</span> ';
                     }
                 } catch (e) {
                     api.error.new(e);
