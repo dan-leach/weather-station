@@ -19,6 +19,9 @@
     <!--moment js-->
     <script src="dependencies/moment.js"></script>
 
+    <!--sweetalert2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

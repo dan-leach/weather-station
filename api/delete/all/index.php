@@ -6,7 +6,7 @@
         $k = $_GET["key"];
         $check = checkKey($k);
     }
-    if (!$check) die('{"msg":"Incorrect key"}');
+    if (!$check) die('{"failMsg":"Incorrect key"}');
 
     //clear SQL
     require '../link.php';
@@ -19,5 +19,5 @@
     }
     $link->close();
 
-    echo('{"msg":"Weather database cleared"}');
+    echo('{"passMsg":"Weather database cleared"}');
 ?>

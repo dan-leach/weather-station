@@ -145,7 +145,7 @@ var api = {
                 } catch (e) {
                     api.error.new(e);
                 }
-            }
+            };
             xhttp.open("GET", "api/select/latest/");
             xhttp.send();
         },
@@ -153,30 +153,51 @@ var api = {
     },
     delete: {
         all: function(){
-            var key = prompt("Enter key:");
-            if (key == null) return;
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                try{
-                    if (this.responseText == null) throw new Error("No response from api/delete/all"); //throw error if no response from API
-                    const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
-                    if (res.error) {
-                        throw new Error(res.error); //throw error if API returns error
-                    } else if (res.msg) {
-                        alert(res.msg);
-                        return;
-                    } else {
-                        ui.reload.setOff();
-                    } 
-                    ui.monitor.empty();
-                    ui.log.empty();
-                    if (res.msg) alert(res.msg);
-                } catch (e) {
-                    api.error.new(e);
+            (async () => {
+                const { value: key } = await Swal.fire({
+                  title: 'Enter key to delete all weather data',
+                  input: 'password',
+                  inputLabel: 'Key',
+                  inputPlaceholder: 'Enter key',
+                  inputAttributes: {
+                    maxlength: 10,
+                    autocapitalize: 'off',
+                    autocorrect: 'off'
+                  },
+                  showCancelButton: true,
+                  showConfirmButton: true,
+                  confirmButtonText: "Delete all weather data",
+                  confirmButtonColor: "#ff1100",
+                  reverseButtons: true
+                })
+                if (key) {
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        try{
+                            if (this.responseText == null) throw new Error("No response from api/delete/all"); //throw error if no response from API
+                            const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
+                            if (res.error) throw new Error(res.error); //throw error if API returns error
+                            if (res.failMsg) Swal.fire({
+                                text: res.failMsg,
+                                icon: "error"
+                            });
+                            if (res.passMsg) {
+                                Swal.fire({
+                                    text: res.passMsg,
+                                    icon: "success"
+                                });
+                                ui.reload.setOff();
+                                ui.monitor.empty();
+                                ui.log.empty();
+                            } 
+                        } catch (e) {
+                            api.error.new(e);
+                        }
+                    }
+                    xhttp.open("GET", "api/delete/all/?key="+key);
+                    xhttp.send();
                 }
-            }
-            xhttp.open("GET", "api/delete/all/?key="+key);
-            xhttp.send();
+            })();
         }
     },
     error: {
@@ -201,23 +222,80 @@ var api = {
                 try{
                     if (this.responseText == null) throw new Error("No response from api/error/check"); //throw error if no response from API
                     const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
-                    if (res.client_errors) {
-                        console.log("Log of client errors found");
-                        document.getElementById("error").innerHTML = '<span class="badge bg-warning">Client Errors</span> ';
-                    }
-                    if (res.server_errors) {
-                        console.log("Log of server errors found");
-                        document.getElementById("error").innerHTML += '<span class="badge bg-warning">Server Errors</span> ';
-                    }
-                    if (res.station_errors) {
-                        console.log("Log of station errors found");
-                        document.getElementById("error").innerHTML += '<span class="badge bg-warning">Station Errors</span> ';
+                    document.getElementById("error").innerHTML = ""; //clear error div before populating
+                    for (err in res) {
+                        if (res[err].length > 0) {
+                            console.log("Log of " + err + " errors found");
+                            document.getElementById("error").innerHTML += '<button class="btn btn-sm btn-warning" onClick="api.error.show(' + "'" + err + "'" + ')">' + err.charAt(0).toUpperCase() + err.slice(1) + ' Errors</button>&nbsp;';
+                            api.error.content[err] = atob(res[err]); //atob decodes base64 into plain string
+                        }
                     }
                 } catch (e) {
                     api.error.new(e);
                 }
             }
             xhttp.open("GET", "api/error/check/");
+            xhttp.send();
+        },
+        content: {
+            client: "",
+            server: "",
+            station: ""
+        },
+        show: function(source){
+            Swal.fire({
+                title: source.charAt(0).toUpperCase() + source.slice(1) + " Errors",
+                html: this.content[source],
+                icon: "warning",
+                showConfirmButton: true,
+                confirmButtonText: "Clear " + source + " error log",
+                confirmButtonColor: "#ff1100",
+                showCancelButton: true,
+                reverseButtons: true,
+            }).then((clear) => {
+                if (clear.isConfirmed) {
+                    (async () => {
+                        const { value: key } = await Swal.fire({
+                          title: 'Enter key',
+                          input: 'password',
+                          inputLabel: 'Key',
+                          inputPlaceholder: 'Enter key',
+                          inputAttributes: {
+                            maxlength: 10,
+                            autocapitalize: 'off',
+                            autocorrect: 'off'
+                          }
+                        })
+                        if (key) {
+                            api.error.clear(source, key);
+                        }
+                    })();
+                    
+                }
+            }) 
+        },
+        clear: function(source, key){
+            console.log("api.error.clear: " + source + " errors");
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                try{
+                    if (this.responseText == null) throw new Error("No response from api/error/clear"); //throw error if no response from API
+                    const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
+                    if (res.error) throw new Error(res.error);
+                    if (res.failMsg) Swal.fire({
+                        text: res.failMsg,
+                        icon: "error"
+                    });
+                    if (res.passMsg) Swal.fire({
+                        text: res.passMsg,
+                        icon: "success"
+                    });
+                    api.error.check();
+                } catch (e) {
+                    api.error.new(e);
+                }
+            }
+            xhttp.open("GET", "api/error/clear/?source="+source+"&key="+key);
             xhttp.send();
         }
     }

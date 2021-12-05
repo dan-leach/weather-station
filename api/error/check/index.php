@@ -1,31 +1,38 @@
 <?php
-    $client_errors = "false";
-    if(file_exists("../client_errors")) $client_errors = true;
+    function checkErrorFile($path) {
+        if (!file_exists($path)) return; //do nothing if error file not found
+        return "[" . $path . "]:<br>" . file_get_contents($path) . ";<br>";
+    }
+    
+    $client_errors = "";
+    $client_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/client_errors");
 
-    $station_errors = "false";
-    if(file_exists("../station_errors")) $station_errors = true;
+    $station_errors = "";
+    $station_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/station_errors");
 
-    $server_errors = "false";
-    if(file_exists("../../../error_log")) $server_errors = "true";
-    if(file_exists("../../error_log")) $server_errors = "true";
-    if(file_exists("../../delete/error_log")) $server_errors = "true";
-    if(file_exists("../../delete/all/error_log")) $server_errors = "true";
-    if(file_exists("../error_log")) $server_errors = "true";
-    if(file_exists("../check/error_log")) $server_errors = "true";
-    if(file_exists("../new/error_log")) $server_errors = "true";
-    if(file_exists("../../insert/error_log")) $server_errors = "true";
-    if(file_exists("../../select/error_log")) $server_errors = "true";
-    if(file_exists("../../select/all/error_log")) $server_errors = "true";
-    if(file_exists("../../select/latest/error_log")) $server_errors = "true";
-    if(file_exists("../../select/rainfall/error_log")) $server_errors = "true";
-    if(file_exists("../../select/temperature/error_log")) $server_errors = "true";
-    if(file_exists("../../select/pressure/error_log")) $server_errors = "true";
-    if(file_exists("../../select/humidity/error_log")) $server_errors = "true";
+    $server_errors = "";
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/delete/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/delete/all/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/check/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/clear/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/error/new/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/insert/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/all/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/humidity/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/latest/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/pressure/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/rainfall/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/temperature/error_log");
+    
     $output = '
             {
-                "client_errors":' . $client_errors . ',
-                "server_errors":' . $server_errors . ',
-                "station_errors":' . $station_errors . '
+                "client":"' . base64_encode($client_errors) . '",
+                "server":"' . base64_encode($server_errors) . '",
+                "station":"' . base64_encode($station_errors) . '"
             }
         ';
     echo $output;
