@@ -34,41 +34,41 @@ Returns most recently received weather data as JSON:
 
 ```json
 { 
-    latest: { //most recently received data from weather station
-        datetime: string, //datetime of weather data in format: YYYY-MM-DD HH:MM:SS
-        wind_speed: float,
-        gust_speed: float,
-        wind_direction: float,
-        ambient_temp: float,
-        ground_temp: float, 
-        humidity: float,
-        pressure: float
+    "latest": { //most recently received data from weather station
+        "datetime": "string", //datetime of weather data in format: YYYY-MM-DD HH:MM:SS
+        "wind_speed": "float",
+        "gust_speed": "float",
+        "wind_direction": "float",
+        "ambient_temp": "float",
+        "ground_temp": "float", 
+        "humidity": "float",
+        "pressure": "float"
     },
-    cum: { // data that requires summing of data points over a time period
-        rainfall: float, //total rainfall over given period, currently set to 60 mins, to evenout granular nature of this data
+    "cum": { // data that requires summing of data points over a time period
+        "rainfall": "float", //total rainfall over given period, currently set to 60 mins, to evenout granular nature of this data
     },
-    minMax: { // selects the minimum and maximum values for each variable since midnight
-        ambient_temp: {
-            min: float,
-            max: float
+    "minMax": { // selects the minimum and maximum values for each variable since midnight
+        "ambient_temp": {
+            "min": "float",
+            "max": "float"
         },
-        ground_temp: {
-            min: float,
-            max: float
+        "ground_temp": {
+            "min": "float",
+            "max": "float"
         },
-        pressure: {
-            min: float,
-            max: float
+        "pressure": {
+            "min": "float",
+            "max": "float"
         },
-        humidity: {
-            min: float,
-            max: float
+        "humidity": {
+            "min": "float",
+            "max": "float"
         },
-        gust_speed: { // gust speed does not return a minimum for the day
-            max: float
+        "gust_speed": { // gust speed does not return a minimum for the day
+            "max": "float"
         }
     },
-    error: string // returns a string containing an error if any occur during scripts generating the variables above
+    "error": "string" // returns a string containing an error if any occur during scripts generating the variables above
 }
 ```
 > `GET` api/select/all/
@@ -89,9 +89,9 @@ Returns any errors as JSON:
 
 ```JSON
 { 
-    client: string,
-    server: string,
-    station: string
+    "client": "string",
+    "server": "string",
+    "station": "string"
 }
 ```
 Error strings are zero length if no errors, base64 encoded if errors found. Server errors may contain content from multiple files
