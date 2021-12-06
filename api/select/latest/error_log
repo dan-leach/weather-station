@@ -1,0 +1,430 @@
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:48:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:49:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:50:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:51:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:51:36 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:52:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:52:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:53:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:53:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:54:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:54:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:55:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:55:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:56:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:56:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:57:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:57:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:58:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:58:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:59:21 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 12:59:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:00:25 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:01:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:02:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:03:25 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:04:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:05:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:06:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:07:25 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:07:26 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:08:25 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:09:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:10:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:11:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:12:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:13:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:14:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:15:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:16:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:17:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:18:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:19:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:20:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: num in /home/dev/public_html/weather/api/select/latest/index.php on line 20
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Trying to get property of non-object in /home/dev/public_html/weather/api/select/latest/index.php on line 22
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: datetime in /home/dev/public_html/weather/api/select/latest/index.php on line 42
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: wind_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 43
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: gust_speed in /home/dev/public_html/weather/api/select/latest/index.php on line 44
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: wind_direction in /home/dev/public_html/weather/api/select/latest/index.php on line 45
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: ambient_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 46
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: ground_temp in /home/dev/public_html/weather/api/select/latest/index.php on line 47
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: humidity in /home/dev/public_html/weather/api/select/latest/index.php on line 48
+[06-Dec-2021 13:21:24 UTC] PHP Notice:  Undefined variable: pressure in /home/dev/public_html/weather/api/select/latest/index.php on line 49

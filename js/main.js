@@ -4,11 +4,6 @@ var ui = {
             console.log('ui.monitor.update');
             document.getElementById("status").innerHTML = "Updated: " + moment(weather.latest.datetime, 'YYYY-MM-DD hh:mm:ss').format('DD/MM/YY HH:mm');
 
-            document.getElementById("wind_speed").innerHTML = weather.latest.wind_speed.toFixed(1);
-            document.getElementById("gust_speed").innerHTML = weather.latest.gust_speed.toFixed(1);
-            document.getElementById("wind_direction").innerHTML = weather.latest.wind_direction;
-            document.getElementById("rainfall").innerHTML = weather.cum.rainfall.toFixed(1);
-
             document.getElementById("ambient_temp").innerHTML = weather.latest.ambient_temp.toFixed(1);
             document.getElementById("ambient_temp_min").innerHTML = weather.minMax.ambient_temp.min.toFixed(1);
             document.getElementById("ambient_temp_max").innerHTML = weather.minMax.ambient_temp.max.toFixed(1);
@@ -17,13 +12,21 @@ var ui = {
             document.getElementById("ground_temp_min").innerHTML = weather.minMax.ground_temp.min.toFixed(1);
             document.getElementById("ground_temp_max").innerHTML = weather.minMax.ground_temp.max.toFixed(1);
 
+            document.getElementById("pressure").innerHTML = weather.latest.pressure.toFixed();
+            document.getElementById("pressure_min").innerHTML = weather.minMax.pressure.min.toFixed();
+            document.getElementById("pressure_max").innerHTML = weather.minMax.pressure.max.toFixed();
+
             document.getElementById("humidity").innerHTML = weather.latest.humidity.toFixed();
             document.getElementById("humidity_min").innerHTML = weather.minMax.humidity.min.toFixed();
             document.getElementById("humidity_max").innerHTML = weather.minMax.humidity.max.toFixed();
 
-            document.getElementById("pressure").innerHTML = weather.latest.pressure.toFixed();
-            document.getElementById("pressure_min").innerHTML = weather.minMax.pressure.min.toFixed();
-            document.getElementById("pressure_max").innerHTML = weather.minMax.pressure.max.toFixed();
+            document.getElementById("wind_speed").innerHTML = weather.latest.wind_speed.toFixed(1);
+            document.getElementById("gust_speed").innerHTML = weather.latest.gust_speed.toFixed(1);
+            document.getElementById("gust_speed_max").innerHTML = weather.minMax.gust_speed.max.toFixed(1);
+            
+            document.getElementById("wind_direction").innerHTML = weather.latest.wind_direction;
+
+            document.getElementById("rainfall").innerHTML = weather.cum.rainfall.toFixed(1);
 
             document.getElementById("status").classList.add("bg-green-fade");
             setTimeout(function(){ document.getElementById("status").classList.remove("bg-green-fade"); }, 10000);

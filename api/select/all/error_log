@@ -1,0 +1,1 @@
+[06-Dec-2021 12:58:12 UTC] PHP Notice:  Undefined variable: today in /home/dev/public_html/weather/api/select/temperature/dayMinMax.php on line 3

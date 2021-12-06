@@ -1,9 +1,6 @@
 <?php
     $error = "";
 
-    $num = 1; //default to return single row
-    if (isset($_GET["num"])) $num = filter_var($_GET["num"], FILTER_SANITIZE_NUMBER_INT); //unless number of rows specified in GET paramater: num
-
     require '../link.php';
     if($link === false){
         $error += "Weather data could not be selected from databse. The server returned the following error message: " . mysqli_connect_error();
@@ -13,13 +10,13 @@
     $rainMins = 60;
     require '../rainfall/rainMins.php';
 
-    //get Minimums and Maximums for today
+    //get minimums and maximums for today
     $today = date('Y-m-d');
     require '../temperature/dayMinMax.php';
     require '../pressure/dayMinMax.php';
     require '../humidity/dayMinMax.php';
+    require '../wind/dayMax.php';
 
-    if ($num < 1) die();
     $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT " . $num;
     $result = $link->query($sql);
     if ($result->num_rows > 0) {
@@ -70,6 +67,9 @@
                 "humidity": {
                     "min":' . $humidity_min . ',
                     "max":' . $humidity_max . '
+                },
+                "gust_speed": {
+                    "max":' . $gust_speed_max . '
                 }
             },
             "error":"' . $error . '"
