@@ -17,7 +17,7 @@
     require '../humidity/dayMinMax.php';
     require '../wind/dayMax.php';
 
-    $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT " . $num;
+    $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT 1";
     $result = $link->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row

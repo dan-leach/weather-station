@@ -21,6 +21,9 @@
 
     <!--sweetalert2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
     
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,9 +40,12 @@
         <hr>
         <?php include 'html/monitor.html'; ?>
         <hr>
+        <?php include 'html/graphs.html'; ?>
+        <hr>
     </div>
     <?php include 'html/log.html'; ?>
     
     <script src="js/main.js"></script>
+    <script src="js/graphs.js"></script>
 </body>
 </html>
