@@ -31,11 +31,13 @@
         removeErrorFile("/home/dev/public_html/weather/api/insert/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/all/error_log");
+        removeErrorFile("/home/dev/public_html/weather/api/select/graphs/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/humidity/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/latest/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/pressure/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/rainfall/error_log");
         removeErrorFile("/home/dev/public_html/weather/api/select/temperature/error_log");
+        removeErrorFile("/home/dev/public_html/weather/api/select/wind/error_log");
         die('{"passMsg":"Server error logs cleared"}');
     }
     

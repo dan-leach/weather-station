@@ -22,11 +22,13 @@
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/insert/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/all/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/graphs/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/humidity/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/latest/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/pressure/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/rainfall/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/temperature/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/wind/error_log");
     
     $output = '
             {

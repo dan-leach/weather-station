@@ -9,6 +9,13 @@
     if (!$check) die("Incorrect key");
 
     class Weather { //Class of functions each returning values of each expected parameter following sanitisation. Returns -1 for any undefined expected parameters.
+        function submissionID(){
+            if (isset($_GET["submissionID"])) {
+                return filter_var($_GET["submissionID"], FILTER_SANITIZE_STRING);
+            } else {
+                return -1;
+            }
+        }
         function version(){
             if (isset($_GET["version"])) {
                 return filter_var($_GET["version"], FILTER_SANITIZE_STRING);
@@ -80,7 +87,8 @@
             }
         }
         function allParams(){
-            $str = "version: " . $this->version() . ", ";
+            $str = "submissionID: " . $this->submissionID() . ", ";
+            $str .= "version: " . $this->version() . ", ";
             $str .= "comment: " . $this->comment() . ", ";
             $str .= "wind_speed: " . $this->wind_speed() . ", ";
             $str .= "gust_speed: " . $this->gust_speed() . ", ";
@@ -96,6 +104,7 @@
 
     //generate log entries and parameters for SQL insert
     $update = new Weather();
+    $submissionID = $update->submissionID();
     $version = $update->version();
     $comment = $update->comment();
     $wind_speed = $update->wind_speed();
@@ -112,11 +121,17 @@
     if($link === false){
         die("Weather data could not be logged. The server returned the following error message: " . mysqli_connect_error());
     }
-    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    //uncomment next section once Mike has station sending unique submissionID parameters in GET request
+    /*if ($result = $link->query("SELECT submissionID FROM tbl_weather WHERE submissionID = '$submissionID'")) { //ensures that each submission is unique
+            die("This submissionID already exists in tbl_weather");
+    }*/
+
+    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ( false===$stmt ) {
         die("Weather data could not be logged. The server returned the following error message: prepare() failed: " . mysqli_error($link));
     }
-    $rc = $stmt->bind_param("ssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure);
+    $rc = $stmt->bind_param("sssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure, $submissionID);
     if ( false===$rc ) {
         die("Weather data could not be logged. The server returned the following error message: bind_param() failed: " . mysqli_error($link));
     }
@@ -128,5 +143,5 @@
     mysqli_close($link);
 
     //output if all successful
-    echo "Weather station data submission: [" . date("Y-m-d H:i:s") . "] " . $update->allParams();;
+    echo "Weather station data submission: [" . date("Y-m-d H:i:s") . "] " . $update->allParams();
 ?>

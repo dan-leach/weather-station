@@ -1,9 +1,8 @@
 <?php
     
-    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT pressure, datetime FROM tbl_weather WHERE datetime >= '$today'";
 
-    $ambient_temp = "";
-    $ground_temp = "";
+    $pressure = "";
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this
 
     $result = $link->query($sql);
@@ -15,21 +14,18 @@
             $decimalHours = $interval->h + (($interval->i) / 60);
 
             while ($decimalHours > ($prevDecimalHours + (1/59.9))) { //59.9 rather than 60 to allow for decimal hour imprecision due to finite significant digits
-                $ambient_temp .= "NaN" . ",";
-                $ground_temp .= "NaN" . ",";
+                $pressure .= "NaN" . ",";
                 $prevDecimalHours += (1/60);
             }
             
-            $ambient_temp .= $row['ambient_temp'] . ",";
-            $ground_temp .= $row['ground_temp'] . ",";
+            $pressure .= $row['pressure'] . ",";
 
             $prevDecimalHours = $decimalHours;
         }
     } else {
-        $error .= "No temperature data found in database";
+        $error .= "No pressure data found in database";
     }
 
-    $ambient_temp = substr($ambient_temp, 0, -1); //remove trailing comma
-    $ground_temp = substr($ground_temp, 0, -1); //remove trailing comma
+    $pressure = substr($pressure, 0, -1); //remove trailing comma
 
 ?>
