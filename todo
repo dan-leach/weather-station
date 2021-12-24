@@ -1,1 +1,15 @@
 set insert to accept floats not strings for relevant variables
+
+push new data into graphs
+trend data for last month (day min/max)
+trend data for last year (?day or ?week or ?month day min/max)
+
+Fix week over 2x hours with span gaps
+
+change datetime to be set be station not server
+station to batch send stored data following period of failed upload
+
+
+
+Station:
+Send api request with error events to /weather/api/error/new/?source=station&stack=x

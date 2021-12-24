@@ -137,7 +137,6 @@ var api = {
                 try{
                     if (this.responseText == null) throw new Error("No weather received"); //throw error if no response from API
                     const weather = JSON.parse(this.responseText); //parse JSON after confirming response not null
-                    console.log(weather);
                     if (weather.error) {
                         throw new Error(weather.error); //throw error if API returns error
                     }

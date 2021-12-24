@@ -1,3 +1,7 @@
+var chart_today = {
+  update: function(){ return null; }
+};
+
 var graphs = {
   load: function(){
     const xhttp = new XMLHttpRequest();
@@ -7,74 +11,167 @@ var graphs = {
       const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
       console.log(res)
       if (res.error) throw new Error(res.error); //throw error if API returns error
-      graphs.temp.res(res.data.ambient_temp, res.data.ground_temp)
-      graphs.temp.create()
-      graphs.wind.res(res.data.wind_speed, res.data.gust_speed)
-      graphs.wind.create()
-      graphs.windDir.res(res.data.wind_direction)
+      graphs.today.res(res.data.today.ambient_temp, res.data.today.ground_temp, res.data.today.wind_speed, res.data.today.gust_speed, res.data.today.pressure, res.data.today.humidity, res.data.today.rainfall)
+      graphs.today.create()
+      graphs.windDir.res(res.data.today.wind_direction)
       graphs.windDir.create()
-      graphs.windDir2.res(res.data.wind_direction)
-      graphs.windDir2.create()
-      graphs.pressureHumidity.res(res.data.pressure, res.data.humidity)
-      graphs.pressureHumidity.create()
-      graphs.rainfall.res(res.data.rainfall)
-      graphs.rainfall.create()
-      
+      graphs.week.res(res.data.week.ambient_temp, res.data.week.ground_temp, res.data.week.wind_speed, res.data.week.gust_speed, res.data.week.pressure, res.data.week.humidity, res.data.week.rainfall)
+      graphs.week.create()
     };
     xhttp.open("GET", "api/select/graphs/");
     xhttp.send();
   },
-  temp: {
-    res: function(res_ambient_temp, res_ground_temp){
+  today: {
+    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall){     
       const resArrays = {
         ambient_temp: res_ambient_temp.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
-        ground_temp: res_ground_temp.split(","), 
+        ground_temp: res_ground_temp.split(","),
+        wind_speed: res_wind_speed.split(","),
+        gust_speed: res_gust_speed.split(","),
+        pressure: res_pressure.split(","),
+        humidity: res_humidity.split(","),
+        rainfall: res_rainfall.split(",")
       }
       for (var x of resArrays.ambient_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.temp.data.ambient_temp.push(parseFloat(x));
+        graphs.today.data.ambient_temp.push(parseFloat(x));
       }
       for (var x of resArrays.ground_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.temp.data.ground_temp.push(parseFloat(x));
+        graphs.today.data.ground_temp.push(parseFloat(x));
+      }
+      for (var x of resArrays.wind_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.wind_speed.push(parseFloat(x));
+      }
+      for (var x of resArrays.gust_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.gust_speed.push(parseFloat(x));
+      }
+      for (var x of resArrays.pressure) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.pressure.push(parseFloat(x));
+      }
+      for (var x of resArrays.humidity) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.humidity.push(parseFloat(x));
+      }
+      for (var x of resArrays.rainfall) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.rainfall.push(parseFloat(x));
       }
 
-      for (let hours = 0; hours < (graphs.temp.data.ground_temp.length / 60); hours++) {
+      for (let hours = 0; hours < (graphs.today.data.ground_temp.length / 60); hours++) {
         var strHours = hours.toString();
         if (strHours.length == 1) strHours = "0" + strHours;
         for (let mins = 0; mins < 60; mins++) {
           var strMins = mins.toString();
           if (strMins.length == 1) strMins = "0" + strMins;
-          graphs.temp.labels.push(strHours + ":" + strMins);
+          graphs.today.labels.push(strHours + ":" + strMins);
         }
       }
     },
     create: function(){
       new Chart(
-        'graph_temp',
+        'graph_today',
         {
           type: 'line',
           data: {
-            labels: graphs.temp.labels,
+            labels: graphs.today.labels,
             datasets: [
               {
-                label: 'Air Temperature',
-                data: graphs.temp.data.ambient_temp,
+                label: 'Wind Speed (km/h)',
+                data: graphs.today.data.wind_speed,
+                borderColor: 'rgb(212, 237, 24)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(212, 237, 24)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                fill: true,
+                yAxisID: 'yWind'
+              },
+              {
+                label: 'Gust Speed (km/h)',
+                data: graphs.today.data.gust_speed,
+                borderColor: 'rgb(237, 56, 24)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(237, 56, 24)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                fill: true,
+                yAxisID: 'yWind'
+              },
+              {
+                label: 'Cumulative Rainfall (mm)',
+                data: graphs.today.data.rainfall,
                 borderColor: 'rgb(80, 60, 255)',
                 borderWidth: 2,
                 backgroundColor: 'rgb(80, 60, 255)',
-                radius: 0.5
+                radius: 0.5,
+                yAxisID: 'yRainfall'
               },
               {
-                label: 'Ground Temperature',
-                data: graphs.temp.data.ground_temp,
+                label: 'Pressure (mbar)',
+                data: graphs.today.data.pressure,
+                borderColor: 'rgb(12, 204, 76)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(12, 204, 76)',
+                radius: 0.5,
+                yAxisID: 'yPressure',
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                }
+              },
+              {
+                label: 'Humidity (%)',
+                data: graphs.today.data.humidity,
+                borderColor: 'rgb(252, 3, 232)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(252, 3, 232)',
+                radius: 0.5,
+                yAxisID: 'yHumidity',
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                }
+              },
+              {
+                label: 'Air Temperature (°C)',
+                data: graphs.today.data.ambient_temp,
+                borderColor: 'rgb(0,0,0)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(0,0,0)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                yAxisID: 'yTemp'
+              },
+              {
+                label: 'Ground Temperature (°C)',
+                data: graphs.today.data.ground_temp,
                 borderColor: 'rgb(145, 117, 32)',
                 borderWidth: 2,
                 backgroundColor: 'rgb(145, 117, 32)',
-                radius: 0.5
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                yAxisID: 'yTemp'
               }
             ]
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
               x: {
                 display: true,
@@ -93,18 +190,82 @@ var graphs = {
                   }
                 }
               },
-              y: {
+              yWind: {
                 display: true,
                 beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Temperature"
-                },
                 ticks: {
                   callback: function(val, index) {
-                    return val + "°C"
+                    return val
                   }
-                }
+                },
+                stack: 'today',
+                stackWeight: 1
+              },
+              yRainfall: {
+                display: true,
+                beginAtZero: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'today',
+                stackWeight: 1,
+                offset: true
+              },
+              yPressure: {
+                display: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'today',
+                stackWeight: 1,
+                offset: true
+              },
+              yBlank3: { //do not display but keeps down humidity scale
+                display: false,
+                position: 'right',
+                stack: 'today',
+                stackWeight: 1
+              },
+              yHumidity: {
+                type: 'linear',
+                display: true,
+                position: 'right',
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                grid: {
+                  drawOnChartArea: false, // only want the grid lines for one axis to show up
+                },
+                stack: 'today',
+                stackWeight: 1
+              },
+              yBlank: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'today',
+                stackWeight: 1
+              },
+              yBlank2: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'today',
+                stackWeight: 1
+              },
+              yTemp: {
+                display: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'today',
+                stackWeight: 1
               }
             },
             plugins: {
@@ -113,117 +274,21 @@ var graphs = {
               },
               title: {
                 display: true,
-                text: 'Temperature (Today)'
+                text: 'Weather Today'
               }
             }
           },
         },
       ); 
     },
-    data: {
-      ambient_temp: [], //the array to push into
-      ground_temp: []
-    },
-    labels: []
-  },
-  wind: {
-    res: function(res_wind_speed, res_gust_speed){
-      const resArray = {
-        wind_speed: res_wind_speed.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
-        gust_speed: res_gust_speed.split(",")
-      }
-      for (var x of resArray.wind_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.wind.data.wind_speed.push(parseFloat(x));
-      }
-      for (var x of resArray.gust_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.wind.data.gust_speed.push(parseFloat(x));
-      }
-      for (let hours = 0; hours < (graphs.wind.data.wind_speed.length / 60); hours++) {
-        var strHours = hours.toString();
-        if (strHours.length == 1) strHours = "0" + strHours;
-        for (let mins = 0; mins < 60; mins++) {
-          var strMins = mins.toString();
-          if (strMins.length == 1) strMins = "0" + strMins;
-          graphs.wind.labels.push(strHours + ":" + strMins);
-        }
-      }
-    },
-    create: function(){
-      new Chart(
-        'graph_wind',
-        {
-          type: 'line',
-          data: {
-            labels: graphs.wind.labels,
-            datasets: [
-              {
-                label: 'Wind Speed',
-                data: graphs.wind.data.wind_speed,
-                borderColor: 'rgb(212, 237, 24)',
-                borderWidth: 2,
-                backgroundColor: 'rgb(212, 237, 24)',
-                radius: 0.5
-              },
-              {
-                label: 'Gust Speed',
-                data: graphs.wind.data.gust_speed,
-                borderColor: 'rgb(237, 56, 24)',
-                borderWidth: 2,
-                backgroundColor: 'rgb(237, 56, 24)',
-                radius: 0.5
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              x: {
-                display: true,
-                title: {
-                  display: true,
-                  text: "Time"
-                },
-                ticks: {
-                  callback: function(val, index) {
-                    var label = this.getLabelForValue(val)
-                    if (label.endsWith('00')) {
-                      return this.getLabelForValue(val)
-                    } else {
-                      return null //don't show label if not on the hour
-                    }
-                  }
-                }
-              },
-              y: {
-                display: true,
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Wind Speed"
-                },
-                ticks: {
-                  callback: function(val, index) {
-                    return val + "km/h"
-                  }
-                }
-              }
-            },
-            plugins: {
-              legend: {
-                position: "top"
-              },
-              title: {
-                display: true,
-                text: 'Wind Speed (Today)'
-              }
-            }
-          },
-        },
-      ); 
-    },
-    data: {
+    data: { //the arrays to push into
+      ambient_temp: [], 
+      ground_temp: [],
       wind_speed: [],
-      gust_speed: []
+      gust_speed: [],
+      pressure: [],
+      humidity: [],
+      rainfall: []
     },
     labels: []
   },
@@ -232,11 +297,12 @@ var graphs = {
       graphs.windDir.data = Object.values(res_wind_direction);
       graphs.windDir.labels = Object.keys(res_wind_direction);
     },
+    chartObj: {},
     create: function(){
-      new Chart(
+      chart_today = new Chart(
         'graph_windDir',
         {
-          type: 'polarArea',
+          type: 'radar',
           data: {
             labels: graphs.windDir.labels,
             datasets: [
@@ -245,57 +311,13 @@ var graphs = {
                 data: graphs.windDir.data,
                 borderColor: 'rgba(212, 237, 24, 0.5)',
                 backgroundColor: 'rgba(212, 237, 24, 0.5)',
-              }
-            ]
-          },
-          options: {
-            scales: {
-              rad: {
-                startAngle: -11.25,
-                ticks: {
-                  display: false
-                }
-              }
-            },
-            plugins: {
-              legend: {
-                display: false
-              },
-              title: {
-                display: true,
-                text: 'Wind Direction (Today) Chart Style Option 1'
-              }
-            }
-          },
-        }
-      ); 
-    },
-    data: [],
-    labels: []
-  },
-  windDir2: {
-    res: function(res_wind_direction){
-      graphs.windDir2.data = Object.values(res_wind_direction);
-      graphs.windDir2.labels = Object.keys(res_wind_direction);
-    },
-    create: function(){
-      new Chart(
-        'graph_windDir2',
-        {
-          type: 'radar',
-          data: {
-            labels: graphs.windDir2.labels,
-            datasets: [
-              {
-                label: 'Wind Direction',
-                data: graphs.windDir2.data,
-                borderColor: 'rgba(212, 237, 24, 0.5)',
-                backgroundColor: 'rgba(212, 237, 24, 0.5)',
                 tension: 0.4
               }
             ]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
               rad: {
                 ticks: {
@@ -309,7 +331,7 @@ var graphs = {
               },
               title: {
                 display: true,
-                text: 'Wind Direction (Today) Chart Style Option 2'
+                text: 'Wind Direction (Today)'
               }
             }
           },
@@ -319,58 +341,157 @@ var graphs = {
     data: [],
     labels: []
   },
-  pressureHumidity: {
-    res: function(res_pressure, res_humidity){
-      const resArray = {
-        pressure: res_pressure.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
-        humidity: res_humidity.split(",")
+  week: {
+    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall){     
+      const resArrays = {
+        ambient_temp: res_ambient_temp.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
+        ground_temp: res_ground_temp.split(","),
+        wind_speed: res_wind_speed.split(","),
+        gust_speed: res_gust_speed.split(","),
+        pressure: res_pressure.split(","),
+        humidity: res_humidity.split(","),
+        rainfall: res_rainfall.split(",")
       }
-      for (var x of resArray.pressure) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.pressureHumidity.data.pressure.push(parseFloat(x));
+      for (var x of resArrays.ambient_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.ambient_temp.push(parseFloat(x));
       }
-      for (var x of resArray.humidity) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.pressureHumidity.data.humidity.push(parseFloat(x));
+      for (var x of resArrays.ground_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.ground_temp.push(parseFloat(x));
       }
-      for (let hours = 0; hours < (graphs.pressureHumidity.data.pressure.length / 60); hours++) {
+      for (var x of resArrays.wind_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.wind_speed.push(parseFloat(x));
+      }
+      for (var x of resArrays.gust_speed) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.gust_speed.push(parseFloat(x));
+      }
+      for (var x of resArrays.pressure) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.pressure.push(parseFloat(x));
+      }
+      for (var x of resArrays.humidity) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.humidity.push(parseFloat(x));
+      }
+      for (var x of resArrays.rainfall) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.rainfall.push(parseFloat(x));
+      }
+
+      for (let hours = 0; hours < (graphs.week.data.ground_temp.length / 60); hours++) {
         var strHours = hours.toString();
         if (strHours.length == 1) strHours = "0" + strHours;
         for (let mins = 0; mins < 60; mins++) {
           var strMins = mins.toString();
           if (strMins.length == 1) strMins = "0" + strMins;
-          graphs.pressureHumidity.labels.push(strHours + ":" + strMins);
+          graphs.week.labels.push(strHours + ":" + strMins);
         }
       }
     },
     create: function(){
       new Chart(
-        'graph_pressureHumidity',
+        'graph_week',
         {
           type: 'line',
           data: {
-            labels: graphs.pressureHumidity.labels,
+            labels: graphs.week.labels,
             datasets: [
               {
-                label: 'Pressure',
-                data: graphs.pressureHumidity.data.pressure,
+                label: 'Wind Speed (km/h)',
+                data: graphs.week.data.wind_speed,
+                borderColor: 'rgb(212, 237, 24)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(212, 237, 24)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                fill: true,
+                yAxisID: 'yWind'
+              },
+              {
+                label: 'Gust Speed (km/h)',
+                data: graphs.week.data.gust_speed,
+                borderColor: 'rgb(237, 56, 24)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(237, 56, 24)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                fill: true,
+                yAxisID: 'yWind'
+              },
+              {
+                label: 'Cumulative Rainfall (mm)',
+                data: graphs.week.data.rainfall,
+                borderColor: 'rgb(80, 60, 255)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(80, 60, 255)',
+                radius: 0.5,
+                yAxisID: 'yRainfall'
+              },
+              {
+                label: 'Pressure (mbar)',
+                data: graphs.week.data.pressure,
                 borderColor: 'rgb(12, 204, 76)',
                 borderWidth: 2,
                 backgroundColor: 'rgb(12, 204, 76)',
                 radius: 0.5,
-                yAxisID: 'yPressure'
+                yAxisID: 'yPressure',
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                }
               },
               {
-                label: 'Humidity',
-                data: graphs.pressureHumidity.data.humidity,
-                borderColor: 'rgb(70, 9, 184)',
+                label: 'Humidity (%)',
+                data: graphs.week.data.humidity,
+                borderColor: 'rgb(252, 3, 232)',
                 borderWidth: 2,
-                backgroundColor: 'rgb(70, 9, 184)',
+                backgroundColor: 'rgb(252, 3, 232)',
                 radius: 0.5,
-                yAxisID: 'yHumidity'
+                yAxisID: 'yHumidity',
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                }
+              },
+              {
+                label: 'Air Temperature (°C)',
+                data: graphs.week.data.ambient_temp,
+                borderColor: 'rgb(0,0,0)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(0,0,0)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                yAxisID: 'yTemp'
+              },
+              {
+                label: 'Ground Temperature (°C)',
+                data: graphs.week.data.ground_temp,
+                borderColor: 'rgb(145, 117, 32)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(145, 117, 32)',
+                radius: 0.5,
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                },
+                yAxisID: 'yTemp'
               }
             ]
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
               x: {
                 display: true,
@@ -389,122 +510,82 @@ var graphs = {
                   }
                 }
               },
-              yPressure: {
+              yWind: {
                 display: true,
-                title: {
-                  display: true,
-                  text: "Pressure"
-                },
+                beginAtZero: true,
                 ticks: {
                   callback: function(val, index) {
-                    return val + "mBar"
+                    return val
                   }
-                }
+                },
+                stack: 'week',
+                stackWeight: 1
+              },
+              yRainfall: {
+                display: true,
+                beginAtZero: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'week',
+                stackWeight: 1,
+                offset: true
+              },
+              yPressure: {
+                display: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'week',
+                stackWeight: 1,
+                offset: true
+              },
+              yBlank3: { //do not display but keeps down humidity scale
+                display: false,
+                position: 'right',
+                stack: 'week',
+                stackWeight: 1
               },
               yHumidity: {
                 type: 'linear',
                 display: true,
                 position: 'right',
-                title: {
-                  display: true,
-                  text: "Humidity"
-                },
                 ticks: {
                   callback: function(val, index) {
-                    return val + "%"
+                    return val
                   }
                 },
                 grid: {
                   drawOnChartArea: false, // only want the grid lines for one axis to show up
                 },
+                stack: 'week',
+                stackWeight: 1
               },
-            },
-            plugins: {
-              legend: {
-                position: "top"
+              yBlank: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'week',
+                stackWeight: 1
               },
-              title: {
+              yBlank2: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'week',
+                stackWeight: 1
+              },
+              yTemp: {
                 display: true,
-                text: 'Pressure & Humidity (Today)'
-              }
-            }
-          },
-        },
-      ); 
-    },
-    data: {
-      pressure: [],
-      humidity: []
-    },
-    labels: []
-  },
-  rainfall: {
-    res: function(res_rainfall){
-      const resArray = res_rainfall.split(","); //"1,2,3,4" to resArray ["1","2","3","4"]
-      for (var x of resArray) { //takes each element of resArray and coverts it to point and pushes into the data array
-        graphs.rainfall.data.push(parseFloat(x));
-      }
-
-      for (let hours = 0; hours < (graphs.rainfall.data.length / 60); hours++) {
-        var strHours = hours.toString();
-        if (strHours.length == 1) strHours = "0" + strHours;
-        for (let mins = 0; mins < 60; mins++) {
-          var strMins = mins.toString();
-          if (strMins.length == 1) strMins = "0" + strMins;
-          graphs.rainfall.labels.push(strHours + ":" + strMins);
-        }
-      }
-    },
-    create: function(){
-      new Chart(
-        'graph_rainfall',
-        {
-          type: 'line',
-          data: {
-            labels: graphs.rainfall.labels,
-            datasets: [
-              {
-                label: 'Cumulative Rainfall',
-                data: graphs.rainfall.data,
-                borderColor: 'rgb(80, 60, 255)',
-                borderWidth: 2,
-                backgroundColor: 'rgb(80, 60, 255)',
-                radius: 0.5
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              x: {
-                display: true,
-                title: {
-                  display: true,
-                  text: "Time"
-                },
                 ticks: {
                   callback: function(val, index) {
-                    var label = this.getLabelForValue(val)
-                    if (label.endsWith('00')) {
-                      return this.getLabelForValue(val)
-                    } else {
-                      return null //don't show label if not on the hour
-                    }
+                    return val
                   }
-                }
-              },
-              y: {
-                display: true,
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Rainfall"
                 },
-                ticks: {
-                  callback: function(val, index) {
-                    return val + "mm"
-                  }
-                }
+                stack: 'week',
+                stackWeight: 1
               }
             },
             plugins: {
@@ -513,18 +594,28 @@ var graphs = {
               },
               title: {
                 display: true,
-                text: 'Cumulative Rainfall (Today)'
+                text: 'Weather This Week'
               }
             }
           },
         },
       ); 
     },
-    data: [],
+    data: { //the arrays to push into
+      ambient_temp: [], 
+      ground_temp: [],
+      wind_speed: [],
+      gust_speed: [],
+      pressure: [],
+      humidity: [],
+      rainfall: []
+    },
     labels: []
   },
   utils: {
-
+    skipped: function(ctx, value){
+      if (ctx.p0.skip || ctx.p1.skip) return value;
+    }
   }
 }
 

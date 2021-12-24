@@ -1,9 +1,10 @@
 <?php
     
-    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT wind_speed, gust_speed, wind_direction, datetime FROM tbl_weather WHERE datetime >= '$today'";
 
-    $ambient_temp = "";
-    $ground_temp = "";
+    $wind_speed = "";
+    $gust_speed = "";
+    $wind_direction = array("N" => 0,"NNE" => 0,"NE" => 0,"ENE" => 0,"E" => 0,"ESE" => 0,"SE" => 0,"SSE" => 0,"S" => 0,"SSW" => 0,"SW" => 0,"WSW" => 0,"W" => 0,"WNW" => 0,"NW" => 0,"NNW" => 0, "N/A" => 0, "-" => 0);
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this
 
     $result = $link->query($sql);
@@ -15,21 +16,22 @@
             $decimalHours = $interval->h + (($interval->i) / 60);
 
             while ($decimalHours > ($prevDecimalHours + (1/59.9))) { //59.9 rather than 60 to allow for decimal hour imprecision due to finite significant digits
-                $ambient_temp .= "NaN" . ",";
-                $ground_temp .= "NaN" . ",";
+                $wind_speed .= "NaN" . ",";
+                $gust_speed .= "NaN" . ",";
                 $prevDecimalHours += (1/60);
             }
             
-            $ambient_temp .= $row['ambient_temp'] . ",";
-            $ground_temp .= $row['ground_temp'] . ",";
+            $wind_direction[$row['wind_direction']]++;
+            $wind_speed .= $row['wind_speed'] . ",";
+            $gust_speed .= $row['gust_speed'] . ",";
 
             $prevDecimalHours = $decimalHours;
         }
     } else {
-        $error .= "No temperature data found in database";
+        $error .= "No weather data found in database; ";
     }
 
-    $ambient_temp = substr($ambient_temp, 0, -1); //remove trailing comma
-    $ground_temp = substr($ground_temp, 0, -1); //remove trailing comma
+    $wind_speed = substr($wind_speed, 0, -1); //remove trailing comma
+    $gust_speed = substr($gust_speed, 0, -1); //remove trailing comma
 
 ?>

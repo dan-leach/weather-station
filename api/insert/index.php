@@ -6,12 +6,18 @@
         $k = $_GET["key"];
         $check = checkKey($k);
     }
-    if (!$check) die("Incorrect key");
+    if (!$check) die(
+        '{
+            "status":' . http_response_code(401) . ',
+            "submissionID":"' . $submissionID . ',
+            "msg":"Incorrect key"
+        }'
+    );
 
     class Weather { //Class of functions each returning values of each expected parameter following sanitisation. Returns -1 for any undefined expected parameters.
         function submissionID(){
-            if (isset($_GET["submissionID"])) {
-                return filter_var($_GET["submissionID"], FILTER_SANITIZE_STRING);
+            if (isset($_GET["datetime"])) {
+                return filter_var($_GET["datetime"], FILTER_SANITIZE_STRING);
             } else {
                 return -1;
             }
@@ -119,29 +125,64 @@
     //insert into database
     require 'link.php';
     if($link === false){
-        die("Weather data could not be logged. The server returned the following error message: " . mysqli_connect_error());
+        die(
+            '{
+                "status":' . http_response_code(500) . ',
+                "submissionID":"' . $submissionID . ',
+                "msg": "Weather data could not be logged. The server returned the following error message: "' . mysqli_connect_error() . '
+            }'
+        );
     }
     
-    //uncomment next section once Mike has station sending unique submissionID parameters in GET request
-    /*if ($result = $link->query("SELECT submissionID FROM tbl_weather WHERE submissionID = '$submissionID'")) { //ensures that each submission is unique
-            die("This submissionID already exists in tbl_weather");
-    }*/
+    if ($result = $link->query("SELECT submissionID FROM tbl_weather WHERE submissionID = '$submissionID'")) { //ensures that each submission is unique
+            die(
+                '{
+                    "status":' . http_response_code(409) . ',
+                    "submissionID":"' . $submissionID . ',
+                    "msg": "This submissionID already exists in tbl_weather"
+                }'
+            );
+    }
 
     $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ( false===$stmt ) {
-        die("Weather data could not be logged. The server returned the following error message: prepare() failed: " . mysqli_error($link));
+        die(
+            '{
+                "status":' . http_response_code(500) . ',
+                "submissionID":"' . $submissionID . ',
+                "msg": "Weather data could not be logged. The server returned the following error message: prepare() failed: "' . mysqli_error($link) .'
+            }'
+        );
     }
     $rc = $stmt->bind_param("sssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure, $submissionID);
     if ( false===$rc ) {
-        die("Weather data could not be logged. The server returned the following error message: bind_param() failed: " . mysqli_error($link));
+        die(
+            '{
+                "status":' . http_response_code(500) . ',
+                "submissionID":"' . $submissionID . ',
+                "msg": "Weather data could not be logged. The server returned the following error message: bind_param() failed: "' . mysqli_error($link) . '
+            }'
+        );
     }
     $rc = $stmt->execute();
     if ( false===$rc ) {
-        die("Weather data could not be logged. The server returned the following error message: execute() failed: " . mysqli_error($link));
+        die(
+            '{
+                "status":' . http_response_code(500) . ',
+                "submissionID":"' . $submissionID . ',
+                "msg": "Weather data could not be logged. The server returned the following error message: execute() failed: "' . mysqli_error($link) . '
+            }'
+        );
     }
     $stmt->close();
     mysqli_close($link);
 
     //output if all successful
-    echo "Weather station data submission: [" . date("Y-m-d H:i:s") . "] " . $update->allParams();
+    $output = '
+        {
+            "status":' . http_response_code(200) . ',
+            "submissionID":"' . $submissionID . '
+        }
+    ';
+    echo $output;
 ?>

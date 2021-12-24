@@ -7,15 +7,17 @@
     }
 
     //get rainfall for last hour
-    $rainMins = 60;
-    require '../rainfall/rainMins.php';
+    require '../rainfall/cumRainHour.php';
 
     //get minimums and maximums for today
     $today = date('Y-m-d');
-    require '../temperature/dayMinMax.php';
-    require '../pressure/dayMinMax.php';
-    require '../humidity/dayMinMax.php';
-    require '../wind/dayMax.php';
+    require '../temperature/minMax.php';
+    require '../pressure/minMax.php';
+    require '../humidity/minMax.php';
+    require '../wind/max.php';
+
+    //get latest cumulative for today to update graph
+    require '../rainfall/graphToday.php';
 
     $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT 1";
     $result = $link->query($sql);
@@ -46,10 +48,11 @@
                 "ambient_temp":' . $ambient_temp . ',
                 "ground_temp":' . $ground_temp . ',
                 "humidity":' . $humidity . ',
-                "pressure":' . $pressure . '
+                "pressure":' . $pressure . ',
+                "rainfall":' . $cumRainToday . '
             },
             "cum": {
-                "rainfall":' . $cumRain . '
+                "rainfall":' . $cumRainHour . '
             },
             "minMax": {
                 "ambient_temp": {
