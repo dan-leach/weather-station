@@ -92,6 +92,13 @@
                 return -1;
             }
         }
+        function power(){
+            if (isset($_GET["power"])) {
+                return filter_var($_GET["power"], FILTER_SANITIZE_STRING);
+            } else {
+                return -1;
+            }
+        }
         function allParams(){
             $str = "submissionID: " . $this->submissionID() . ", ";
             $str .= "version: " . $this->version() . ", ";
@@ -104,6 +111,7 @@
             $str .= "ground_temp: " . $this->ground_temp() . ", ";
             $str .= "humidity: " . $this->humidity() . ", ";
             $str .= "pressure: " . $this->pressure();
+            $str .= "power: " . $this->power();
             return $str;
         }
     }
@@ -121,6 +129,7 @@
     $ground_temp = $update->ground_temp();
     $humidity = $update->humidity();
     $pressure = $update->pressure();
+    $power = $update->power();
 
     //insert into database
     require 'link.php';
@@ -144,7 +153,7 @@
             );
     }
 
-    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, power, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ( false===$stmt ) {
         die(
             '{
@@ -154,7 +163,7 @@
             }'
         );
     }
-    $rc = $stmt->bind_param("sssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure, $submissionID);
+    $rc = $stmt->bind_param("ssssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure, $power, $submissionID);
     if ( false===$rc ) {
         die(
             '{
