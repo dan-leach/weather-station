@@ -29,6 +29,7 @@
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/rainfall/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/temperature/error_log");
     $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/select/wind/error_log");
+    $server_errors .= checkErrorFile("/home/dev/public_html/weather/api/consolidate/error_log");
     
     $output = '
             {

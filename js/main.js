@@ -1,7 +1,7 @@
 var ui = {
     monitor: {
         update: function(weather){
-            console.log('ui.monitor.update');
+            //console.log('ui.monitor.update');
             document.getElementById("status").innerHTML = "Updated: " + moment(weather.latest.datetime, 'YYYY-MM-DD hh:mm:ss').format('DD/MM/YY HH:mm');
 
             document.getElementById("ambient_temp").innerHTML = weather.latest.ambient_temp.toFixed(1);
@@ -131,7 +131,7 @@ var ui = {
 var api = {
     select: {
         latest: function(){
-            console.log("api.select.latest");
+            //console.log("api.select.latest");
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 try{
