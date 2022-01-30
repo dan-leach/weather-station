@@ -15,7 +15,7 @@ var graphs = {
       graphs.today.create()
       graphs.windDir.res(res.data.today.wind_direction)
       graphs.windDir.create()
-      graphs.week.res(res.data.week.ambient_temp, res.data.week.ground_temp, res.data.week.wind_speed, res.data.week.gust_speed, res.data.week.pressure, res.data.week.humidity, res.data.week.rainfall)
+      graphs.week.res(res.data.week.ambient_temp, res.data.week.ground_temp, res.data.week.wind_speed, res.data.week.gust_speed, res.data.week.pressure, res.data.week.humidity, res.data.week.rainfall, res.data.week.power)
       graphs.week.create()
     };
     xhttp.open("GET", "api/select/graphs/");
@@ -57,7 +57,6 @@ var graphs = {
       for (var x of resArrays.power) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.today.data.power.push(parseFloat(x));
       }
-
       for (let hours = 0; hours < (graphs.today.data.ground_temp.length / 60); hours++) {
         var strHours = hours.toString();
         if (strHours.length == 1) strHours = "0" + strHours;
@@ -374,7 +373,7 @@ var graphs = {
     labels: []
   },
   week: {
-    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall){     
+    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall, res_power){
       const resArrays = {
         ambient_temp: res_ambient_temp.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
         ground_temp: res_ground_temp.split(","),
@@ -382,7 +381,8 @@ var graphs = {
         gust_speed: res_gust_speed.split(","),
         pressure: res_pressure.split(","),
         humidity: res_humidity.split(","),
-        rainfall: res_rainfall.split(",")
+        rainfall: res_rainfall.split(","),
+        power: res_power.split(",")
       }
       for (var x of resArrays.ambient_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.week.data.ambient_temp.push(parseFloat(x));
@@ -405,14 +405,16 @@ var graphs = {
       for (var x of resArrays.rainfall) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.week.data.rainfall.push(parseFloat(x));
       }
+      for (var x of resArrays.power) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.data.power.push(parseFloat(x));
+      }
 
-      for (let hours = 0; hours < (graphs.week.data.ground_temp.length / 60); hours++) {
-        var strHours = hours.toString();
-        if (strHours.length == 1) strHours = "0" + strHours;
-        for (let mins = 0; mins < 60; mins++) {
-          var strMins = mins.toString();
-          if (strMins.length == 1) strMins = "0" + strMins;
-          graphs.week.labels.push(strHours + ":" + strMins);
+      for (let days = 0; days < (graphs.week.data.ground_temp.length / 24); days++) {
+        var strDays = days.toString();
+        for (let hours = 0; hours < 24; hours++) {
+          var strHours = hours.toString();
+          if (strHours.length == 1) strHours = "0" + strHours;
+          graphs.week.labels.push("Day " + strDays + " " + strHours + ":00");
         }
       }
     },
@@ -453,6 +455,15 @@ var graphs = {
                 },
                 fill: true,
                 yAxisID: 'yWind'
+              },
+              {
+                label: 'Power (kW)',
+                data: graphs.week.data.power,
+                borderColor: 'rgb(245, 155, 0)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(245, 155, 0)',
+                radius: 0.5,
+                yAxisID: 'yPower'
               },
               {
                 label: 'Cumulative Rainfall (mm)',
@@ -553,6 +564,18 @@ var graphs = {
                 stack: 'week',
                 stackWeight: 1
               },
+              yPower: {
+                display: true,
+                beginAtZero: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'week',
+                stackWeight: 1,
+                offset: true
+              },
               yRainfall: {
                 display: true,
                 beginAtZero: true,
@@ -609,6 +632,12 @@ var graphs = {
                 stack: 'week',
                 stackWeight: 1
               },
+              yBlank4: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'week',
+                stackWeight: 1
+              },
               yTemp: {
                 display: true,
                 ticks: {
@@ -640,7 +669,8 @@ var graphs = {
       gust_speed: [],
       pressure: [],
       humidity: [],
-      rainfall: []
+      rainfall: [],
+      power: []
     },
     labels: []
   },

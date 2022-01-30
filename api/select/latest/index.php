@@ -15,6 +15,7 @@
     require '../pressure/minMax.php';
     require '../humidity/minMax.php';
     require '../wind/max.php';
+    require '../power/max.php';
 
     //get latest cumulative for today to update graph
     require '../rainfall/graphToday.php';
@@ -77,6 +78,9 @@
                 },
                 "gust_speed": {
                     "max":' . $gust_speed_max . '
+                },
+                "power": {
+                    "max":' . $power_max . '
                 }
             },
             "error":"' . $error . '"

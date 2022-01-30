@@ -21,6 +21,7 @@
     require '../pressure/graphWeek.php';
     require '../humidity/graphWeek.php';
     require '../rainfall/graphWeek.php';
+    require '../power/graphWeek.php';
 
     $link->close();
 
@@ -80,7 +81,8 @@
                     },
                     "pressure":"' . $pressure_week . '",
                     "humidity":"' . $humidity_week . '",
-                    "rainfall":"' . $rainfall_week . '"
+                    "rainfall":"' . $rainfall_week . '",
+                    "power":"' . $power_week . '"
                 }
             },
             "error":"' . $error . '"

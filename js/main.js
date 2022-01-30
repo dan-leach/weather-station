@@ -12,13 +12,13 @@ var ui = {
             document.getElementById("ground_temp_min").innerHTML = weather.minMax.ground_temp.min.toFixed(1);
             document.getElementById("ground_temp_max").innerHTML = weather.minMax.ground_temp.max.toFixed(1);
 
-            document.getElementById("pressure").innerHTML = weather.latest.pressure.toFixed();
-            document.getElementById("pressure_min").innerHTML = weather.minMax.pressure.min.toFixed();
-            document.getElementById("pressure_max").innerHTML = weather.minMax.pressure.max.toFixed();
+            document.getElementById("pressure").innerHTML = weather.latest.pressure.toFixed(0);
+            document.getElementById("pressure_min").innerHTML = weather.minMax.pressure.min.toFixed(0);
+            document.getElementById("pressure_max").innerHTML = weather.minMax.pressure.max.toFixed(0);
 
-            document.getElementById("humidity").innerHTML = weather.latest.humidity.toFixed();
-            document.getElementById("humidity_min").innerHTML = weather.minMax.humidity.min.toFixed();
-            document.getElementById("humidity_max").innerHTML = weather.minMax.humidity.max.toFixed();
+            document.getElementById("humidity").innerHTML = weather.latest.humidity.toFixed(0);
+            document.getElementById("humidity_min").innerHTML = weather.minMax.humidity.min.toFixed(0);
+            document.getElementById("humidity_max").innerHTML = weather.minMax.humidity.max.toFixed(0);
 
             document.getElementById("wind_speed").innerHTML = weather.latest.wind_speed.toFixed(1);
             document.getElementById("gust_speed").innerHTML = weather.latest.gust_speed.toFixed(1);
@@ -28,7 +28,9 @@ var ui = {
 
             document.getElementById("rainfall").innerHTML = weather.cum.rainfall.toFixed(1);
 
-            document.getElementById("power").innerHTML = weather.latest.power.toFixed(1);
+            document.getElementById("power").innerHTML = weather.latest.power.toFixed(2);
+            document.getElementById("power_max").innerHTML = weather.minMax.power.max.toFixed(2);
+
             document.getElementById("energy").innerHTML = weather.latest.energy.toFixed(1);
 
             document.getElementById("status").classList.add("bg-green-fade");

@@ -4,8 +4,8 @@
 
     require 'link.php';
 
-    $dt = new Datetime('2021-12-01 00:00:00');
-    $end = new Datetime('2022-01-23 17:00:00');
+    $dt = new Datetime('2022-01-23 16:00:00');
+    $end = new Datetime('2022-01-30 14:00:00');
     echo "backfill period: " . $dt->format('Y-m-d H:i:s') . " to " . $end->format('Y-m-d H:i:s') . "<br>";
 
     while ($dt < $end){
