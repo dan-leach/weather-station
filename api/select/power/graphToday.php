@@ -1,8 +1,8 @@
 <?php
     
-    $sql = "SELECT pressure, datetime FROM tbl_weather_hourly WHERE datetime >= '$lastWeek'";
+    $sql = "SELECT power, datetime FROM tbl_weather WHERE datetime >= '$today'";
 
-    $pressure_week = "";
+    $power = "";
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this
 
     $result = $link->query($sql);
@@ -14,18 +14,18 @@
             $decimalHours = $interval->h + (($interval->i) / 60);
 
             while ($decimalHours > ($prevDecimalHours + (1/59.9))) { //59.9 rather than 60 to allow for decimal hour imprecision due to finite significant digits
-                $pressure_week .= "NaN" . ",";
+                $power .= "NaN" . ",";
                 $prevDecimalHours += (1/60);
             }
             
-            $pressure_week .= $row['pressure'] . ",";
+            $power .= $row['power'] . ",";
 
             $prevDecimalHours = $decimalHours;
         }
     } else {
-        $error .= "No pressure data found in database";
+        $error .= "No power data found in database";
     }
 
-    $pressure_week = substr($pressure_week, 0, -1); //remove trailing comma
+    $power = substr($power, 0, -1); //remove trailing comma
 
 ?>

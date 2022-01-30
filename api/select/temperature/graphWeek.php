@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather WHERE datetime >= '$lastWeek'";
+    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather_hourly WHERE datetime >= '$lastWeek'";
 
     $ambient_temp_week = "";
     $ground_temp_week = "";
@@ -8,6 +8,7 @@
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this
 
     $result = $link->query($sql);
+    
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {

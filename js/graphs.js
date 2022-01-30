@@ -11,7 +11,7 @@ var graphs = {
       const res = JSON.parse(this.responseText); //parse JSON after confirming response not null
       console.log(res)
       if (res.error) throw new Error(res.error); //throw error if API returns error
-      graphs.today.res(res.data.today.ambient_temp, res.data.today.ground_temp, res.data.today.wind_speed, res.data.today.gust_speed, res.data.today.pressure, res.data.today.humidity, res.data.today.rainfall)
+      graphs.today.res(res.data.today.ambient_temp, res.data.today.ground_temp, res.data.today.wind_speed, res.data.today.gust_speed, res.data.today.pressure, res.data.today.humidity, res.data.today.rainfall, res.data.today.power)
       graphs.today.create()
       graphs.windDir.res(res.data.today.wind_direction)
       graphs.windDir.create()
@@ -22,7 +22,7 @@ var graphs = {
     xhttp.send();
   },
   today: {
-    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall){     
+    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall, res_power){     
       const resArrays = {
         ambient_temp: res_ambient_temp.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
         ground_temp: res_ground_temp.split(","),
@@ -30,7 +30,8 @@ var graphs = {
         gust_speed: res_gust_speed.split(","),
         pressure: res_pressure.split(","),
         humidity: res_humidity.split(","),
-        rainfall: res_rainfall.split(",")
+        rainfall: res_rainfall.split(","),
+        power: res_power.split(",")
       }
       for (var x of resArrays.ambient_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.today.data.ambient_temp.push(parseFloat(x));
@@ -52,6 +53,9 @@ var graphs = {
       }
       for (var x of resArrays.rainfall) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.today.data.rainfall.push(parseFloat(x));
+      }
+      for (var x of resArrays.power) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.today.data.power.push(parseFloat(x));
       }
 
       for (let hours = 0; hours < (graphs.today.data.ground_temp.length / 60); hours++) {
@@ -101,6 +105,15 @@ var graphs = {
                 },
                 fill: true,
                 yAxisID: 'yWind'
+              },
+              {
+                label: 'Power (kW)',
+                data: graphs.today.data.power,
+                borderColor: 'rgb(245, 155, 0)',
+                borderWidth: 2,
+                backgroundColor: 'rgb(245, 155, 0)',
+                radius: 0.5,
+                yAxisID: 'yPower'
               },
               {
                 label: 'Cumulative Rainfall (mm)',
@@ -201,6 +214,18 @@ var graphs = {
                 stack: 'today',
                 stackWeight: 1
               },
+              yPower: {
+                display: true,
+                beginAtZero: true,
+                ticks: {
+                  callback: function(val, index) {
+                    return val
+                  }
+                },
+                stack: 'today',
+                stackWeight: 1,
+                offset: true
+              },
               yRainfall: {
                 display: true,
                 beginAtZero: true,
@@ -257,6 +282,12 @@ var graphs = {
                 stack: 'today',
                 stackWeight: 1
               },
+              yBlank2: { //do not display but lifts up humidity scale
+                display: false,
+                position: 'right',
+                stack: 'today',
+                stackWeight: 1
+              },
               yTemp: {
                 display: true,
                 ticks: {
@@ -288,7 +319,8 @@ var graphs = {
       gust_speed: [],
       pressure: [],
       humidity: [],
-      rainfall: []
+      rainfall: [],
+      power: []
     },
     labels: []
   },

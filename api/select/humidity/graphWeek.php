@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT humidity, datetime FROM tbl_weather WHERE datetime >= '$lastWeek'";
+    $sql = "SELECT humidity, datetime FROM tbl_weather_hourly WHERE datetime >= '$lastWeek'";
 
     $humidity_week = "";
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this

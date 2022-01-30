@@ -32,6 +32,8 @@
             $ground_temp = $row['ground_temp'];
             $humidity = $row['humidity'];
             $pressure = $row['pressure'];
+            $power = $row['power'];
+            $energy = $row['energy'];
         }
     } else {
         $error += "No weather data found in database";
@@ -49,7 +51,9 @@
                 "ground_temp":' . $ground_temp . ',
                 "humidity":' . $humidity . ',
                 "pressure":' . $pressure . ',
-                "rainfall":' . $cumRainToday . '
+                "rainfall":' . $cumRainToday . ',
+                "power":' . $power . ',
+                "energy":' . $energy . '
             },
             "cum": {
                 "rainfall":' . $cumRainHour . '

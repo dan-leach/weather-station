@@ -13,6 +13,7 @@
     require '../pressure/graphToday.php';
     require '../humidity/graphToday.php';
     require '../rainfall/graphToday.php';
+    require '../power/graphToday.php';
 
     $lastWeek = date("Y-m-d", strtotime("-1 week"));
     require '../temperature/graphWeek.php';
@@ -51,7 +52,8 @@
                     },
                     "pressure":"' . $pressure . '",
                     "humidity":"' . $humidity . '",
-                    "rainfall":"' . $rainfall . '"
+                    "rainfall":"' . $rainfall . '",
+                    "power":"' . $power . '"
                 },
                 "week": {
                     "ambient_temp":"' . $ambient_temp_week . '",

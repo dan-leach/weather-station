@@ -4,15 +4,8 @@
 
     require 'link.php';
 
-    $sql = "SELECT datetime FROM tbl_weather ORDER BY datetime ASC LIMIT 1";
-    $result = $link->query($sql);
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $earliest = new Datetime($row['datetime']);
-        $dt = new Datetime($row['datetime']);
-    }
-
-    $end = new Datetime();
+    $dt = new Datetime('2021-12-01 00:00:00');
+    $end = new Datetime('2022-01-23 17:00:00');
     echo "backfill period: " . $dt->format('Y-m-d H:i:s') . " to " . $end->format('Y-m-d H:i:s') . "<br>";
 
     while ($dt < $end){
@@ -21,7 +14,6 @@
         $upper = $dt->format('Y-m-d H:i:s');
         averageHour($lower, $upper, $link);
     }
-    die('end');
 
     function averageHour($lower, $upper, $link){
         $wind_speeds = [];
@@ -98,17 +90,16 @@
             $humiditys[] = $row['humidity'];
             $pressures[] = $row['pressure'];
             $powers[] = $row['power'];
-            $datetime = $row['datetime'];
 
         }
 
-        $av_wind_speed = array_sum($wind_speeds)/count($wind_speeds);
-        $av_wind_direction = array_sum($wind_directions)/count($wind_directions);
-        $av_ambient_temp = array_sum($ambient_temps)/count($ambient_temps);
-        $av_ground_temp = array_sum($ground_temps)/count($ground_temps);
-        $av_humidity = array_sum($humiditys)/count($humiditys);
-        $av_pressure = array_sum($pressures)/count($pressures);
-        $av_power = array_sum($powers)/count($powers);
+        $av_wind_speed = (count($wind_speeds)) ? array_sum($wind_speeds)/count($wind_speeds) : -1;
+        $av_wind_direction = (count($wind_directions)) ? get_average_wind_direction($wind_directions) : -1;
+        $av_ambient_temp = (count($ambient_temps)) ? array_sum($ambient_temps)/count($ambient_temps) : -1;
+        $av_ground_temp = (count($ground_temps)) ? array_sum($ground_temps)/count($ground_temps) : -1;
+        $av_humidity = (count($humiditys)) ? array_sum($humiditys)/count($humiditys) : -1;
+        $av_pressure = (count($pressures)) ? array_sum($pressures)/count($pressures) : -1;
+        $av_power = (count($powers)) ? array_sum($powers)/count($powers) : -1;
 
         echo "<hr><strong>Averaging data for time period from " . $lower . " to " . $upper . ".</strong><br>";
         echo "av_wind_speed: " . $av_wind_speed . "; ";
@@ -120,14 +111,111 @@
         echo "av_humidity: " . $av_humidity . "; ";
         echo "av_pressure: " . $av_pressure . "; ";
         echo "av_power: " . $av_power . "; ";
-        echo "datetime: " . $datetime . "; ";
+        echo "datetime: " . $lower . "; ";
 
         $stmt = $link->prepare("INSERT INTO tbl_weather_hourly (wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, power, datetime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssss", $av_wind_speed, $max_gust_speed, $av_wind_direction, $rainfall, $av_ambient_temp, $av_ground_temp, $av_humidity, $av_pressure, $av_power, $datetime);
+        $stmt->bind_param("ssssssssss", $av_wind_speed, $max_gust_speed, $av_wind_direction, $rainfall, $av_ambient_temp, $av_ground_temp, $av_humidity, $av_pressure, $av_power, $lower);
         $stmt->execute();
 
+        $stmt->close();
     }
-    
-    $stmt->close();
+
+    function get_average_wind_direction($angles){
+        // Calculate the average value of a list of angles. Return 0 if empty list
+        // Return the wind direction in 22.5 degree intervals
+        $av_wind_direction = 0.0;
+
+        $sin_sum = 0.0;
+        $cos_sum = 0.0;
+
+        foreach ($angles as $angle){
+            $radians = deg2rad($angle);
+            $sin_sum += sin($radians);
+            $cos_sum += cos($radians);
+        }
+
+        $sin = $sin_sum / count($angles);
+        $cos = $cos_sum / count($angles);
+        if ($cos == 0.0){ // prevent division by zero in atan
+            if ($sin > 0.0){
+                $av_wind_direction = 90.0;
+            } else {
+                $av_wind_direction = 270.0;
+            }
+        } else {
+            $arc = rad2deg(atan($sin / $cos));
+            $av_wind_direction = 0.0;
+
+            if ($sin >= 0.0 && $cos >= 0.0){ // 0 - 90
+                $av_wind_direction = $arc;
+            } elseif ($cos < 0.0){    // 90 - 270
+                $av_wind_direction = 180.0 + $arc;
+            } else { // s <= 0 and c >0  //270 - 360
+                $av_wind_direction = 360.0 + $arc;
+            }
+                
+            $av_wind_direction = round($av_wind_direction / 22.5) * 22.5;
+            if ($av_wind_direction == 360.0){
+                $av_wind_direction = 0.0;
+            }
+        }
+
+        switch ($av_wind_direction){
+            case 0.0:
+                $av_wind_direction = "N";
+                break;
+            case 22.5:
+                $av_wind_direction = "NNE";
+                break;
+            case 45.0:
+                $av_wind_direction = "NE";
+                break;
+            case 67.5:
+                $av_wind_direction = "ENE";
+                break;
+            case 90.0:
+                $av_wind_direction = "E";
+                break;
+            case 112.5:
+                $av_wind_direction = "ESE";
+                break;
+            case 135.0:
+                $av_wind_direction = "SE";
+                break;
+            case 157.5:
+                $av_wind_direction = "SSE";
+                break;
+            case 180.0:
+                $av_wind_direction = "S";
+                break;
+            case 202.5:
+                $av_wind_direction = "SSW";
+                break;
+            case 225.0:
+                $av_wind_direction = "SW";
+                break;
+            case 247.5:
+                $av_wind_direction = "WSW";
+                break;
+            case 270.0:
+                $av_wind_direction = "W";
+                break;
+            case 292.5:
+                $av_wind_direction = "WNW";
+                break;
+            case 315.0:
+                $av_wind_direction = "NW";
+                break;
+            case 337.5:
+                $av_wind_direction = "NNW";
+                break;
+            default:
+                error_log("Wind direction error: " . $av_wind_direction);
+                $av_wind_direction = -1;
+        }
+        
+        return $av_wind_direction;
+    }
+
     $link->close();
 ?>

@@ -7,11 +7,11 @@
         $check = checkKey($k);
     }
     if (!$check) die(
-        '{
-            "status":' . http_response_code(401) . ',
-            "submissionID":"' . $submissionID . ',
-            "msg":"Incorrect key"
-        }'
+            '{
+                "status":' . http_response_code(401) . ',
+                "submissionID":"' . $submissionID . ',
+                "msg":"Incorrect key"
+            }'
     );
 
     class Weather { //Class of functions each returning values of each expected parameter following sanitisation. Returns -1 for any undefined expected parameters.
@@ -71,6 +71,13 @@
                 return -1;
             }
         }
+        function internal_temp(){
+            if (isset($_GET["internal_temp"])) {
+                return filter_var($_GET["internal_temp"], FILTER_SANITIZE_STRING);
+            } else {
+                return -1;
+            }
+        }
         function ground_temp(){
             if (isset($_GET["ground_temp"])) {
                 return filter_var($_GET["ground_temp"], FILTER_SANITIZE_STRING);
@@ -99,6 +106,13 @@
                 return -1;
             }
         }
+        function energy(){
+            if (isset($_GET["energy"])) {
+                return filter_var($_GET["energy"], FILTER_SANITIZE_STRING);
+            } else {
+                return -1;
+            }
+        }
         function allParams(){
             $str = "submissionID: " . $this->submissionID() . ", ";
             $str .= "version: " . $this->version() . ", ";
@@ -108,10 +122,12 @@
             $str .= "wind_direction: " . $this->wind_direction() . ", ";
             $str .= "rainfall: " . $this->rainfall() . ", ";
             $str .= "ambient_temp: " . $this->ambient_temp() . ", ";
+            $str .= "internal_temp: " . $this->internal_temp() . ", ";
             $str .= "ground_temp: " . $this->ground_temp() . ", ";
             $str .= "humidity: " . $this->humidity() . ", ";
-            $str .= "pressure: " . $this->pressure();
-            $str .= "power: " . $this->power();
+            $str .= "pressure: " . $this->pressure()  . ", ";
+            $str .= "power: " . $this->power() . ", "; //instantaneous power (kW)
+            $str .= "energy: " . $this->energy(); //cumulative energy generated since midnight (kWh)
             return $str;
         }
     }
@@ -126,10 +142,12 @@
     $wind_direction = $update->wind_direction();
     $rainfall = $update->rainfall();
     $ambient_temp = $update->ambient_temp();
+    $internal_temp = $update->internal_temp();
     $ground_temp = $update->ground_temp();
     $humidity = $update->humidity();
     $pressure = $update->pressure();
     $power = $update->power();
+    $energy = $update->energy();
 
     //insert into database
     require 'link.php';
@@ -153,7 +171,7 @@
             );
     }
 
-    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, power, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, internal_temp, ground_temp, humidity, pressure, power, energy, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ( false===$stmt ) {
         die(
             '{
@@ -163,7 +181,7 @@
             }'
         );
     }
-    $rc = $stmt->bind_param("ssssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $ground_temp, $humidity, $pressure, $power, $submissionID);
+    $rc = $stmt->bind_param("ssssssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $internal_temp, $ground_temp, $humidity, $pressure, $power, $energy, $submissionID);
     if ( false===$rc ) {
         die(
             '{

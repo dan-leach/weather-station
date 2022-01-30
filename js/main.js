@@ -28,6 +28,9 @@ var ui = {
 
             document.getElementById("rainfall").innerHTML = weather.cum.rainfall.toFixed(1);
 
+            document.getElementById("power").innerHTML = weather.latest.power.toFixed(1);
+            document.getElementById("energy").innerHTML = weather.latest.energy.toFixed(1);
+
             document.getElementById("status").classList.add("bg-green-fade");
             setTimeout(function(){ document.getElementById("status").classList.remove("bg-green-fade"); }, 10000);
         },

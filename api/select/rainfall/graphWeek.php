@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT rainfall, datetime FROM tbl_weather WHERE datetime >= '$lastWeek'";
+    $sql = "SELECT rainfall, datetime FROM tbl_weather_hourly WHERE datetime >= '$lastWeek'";
 
     $rainfall_week = "";
     $cumRainWeek = 0;
