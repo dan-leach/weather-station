@@ -1,1 +1,4 @@
-[2022-01-30 03:57:16] station: Unspecified non-fatal station error ...
+[2022-02-06 02:05:20] station: Wind vane open circuit
+[2022-02-06 04:37:12] station: Wind vane open circuit
+[2022-02-07 20:56:02] station: Upload error: Response 500Internal Server Error
+[2022-02-09 19:37:05] station: scp copy of data from BHBPV failed

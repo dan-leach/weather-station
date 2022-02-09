@@ -1,12 +1,20 @@
 <?php
 
-    die('Function disabled'); //comment out this line if you need to use this script
+    //die('Function disabled'); //comment out this line if you need to use this script
 
     require 'link.php';
+    if (!isset($backfillIsNeeded)) die("Launch via graphs/index.php");
+    if (!$backfillIsNeeded) die("Backfill not required");
 
-    $dt = new Datetime('2022-01-23 16:00:00');
-    $end = new Datetime('2022-01-30 14:00:00');
-    echo "backfill period: " . $dt->format('Y-m-d H:i:s') . " to " . $end->format('Y-m-d H:i:s') . "<br>";
+    //get required backfill from getTimes.php
+    $dt = $backfillStart;
+    $end = $backfillEnd;
+
+    //or set custom start and end
+    //$dt = new Datetime('2022-01-23 16:00:00');
+    //$end = new Datetime('2022-01-30 14:00:00');
+
+    //echo "backfill period: " . $dt->format('Y-m-d H:i:s') . " to " . $end->format('Y-m-d H:i:s') . "<br>";
 
     while ($dt < $end){
         $lower = $dt->format('Y-m-d H:i:s');
@@ -101,6 +109,7 @@
         $av_pressure = (count($pressures)) ? array_sum($pressures)/count($pressures) : -1;
         $av_power = (count($powers)) ? array_sum($powers)/count($powers) : -1;
 
+        /*
         echo "<hr><strong>Averaging data for time period from " . $lower . " to " . $upper . ".</strong><br>";
         echo "av_wind_speed: " . $av_wind_speed . "; ";
         echo "max_gust_speed: " . $max_gust_speed . "; ";
@@ -112,6 +121,7 @@
         echo "av_pressure: " . $av_pressure . "; ";
         echo "av_power: " . $av_power . "; ";
         echo "datetime: " . $lower . "; ";
+        */
 
         $stmt = $link->prepare("INSERT INTO tbl_weather_hourly (wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, power, datetime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssssssss", $av_wind_speed, $max_gust_speed, $av_wind_direction, $rainfall, $av_ambient_temp, $av_ground_temp, $av_humidity, $av_pressure, $av_power, $lower);

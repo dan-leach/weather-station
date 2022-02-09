@@ -6,6 +6,11 @@
         $error += "Graph data could not be selected from databse. The server returned the following error message: " . mysqli_connect_error();
     }
 
+    require '../../consolidate/getTimes.php';
+    if ($backfillIsNeeded) {
+        require '../../consolidate/hourlyBackfill.php';
+    }
+
     $today = date('Y-m-d');
     $midnight = new DateTime('midnight'); //creates datetime object with value of 00:00:00 today
     require '../temperature/graphToday.php';
@@ -85,6 +90,7 @@
                     "power":"' . $power_week . '"
                 }
             },
+            "backfillIsNeeded":"' . $backfillIsNeeded . '",
             "error":"' . $error . '"
         }
     ';
