@@ -1,8 +1,6 @@
 <?php
-
-    //die('Function disabled'); //comment out this line if you need to use this script
-
     require 'link.php';
+
     if (!isset($backfillIsNeeded)) die("Launch via graphs/index.php");
     if (!$backfillIsNeeded) die("Backfill not required");
 
@@ -122,9 +120,26 @@
         echo "av_power: " . $av_power . "; ";
         echo "datetime: " . $lower . "; ";
         */
+        
 
         $stmt = $link->prepare("INSERT INTO tbl_weather_hourly (wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, ground_temp, humidity, pressure, power, datetime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssss", $av_wind_speed, $max_gust_speed, $av_wind_direction, $rainfall, $av_ambient_temp, $av_ground_temp, $av_humidity, $av_pressure, $av_power, $lower);
+        if ( false===$stmt ) {
+            die(
+                '{
+                    "status":' . http_response_code(500) . ',
+                    "msg": "Weather hourly data could not be logged. The server returned the following error message: prepare() failed: "' . mysqli_error($link) .'
+                }'
+            );
+        }
+        $rc = $stmt->bind_param("ssssssssss", $av_wind_speed, $max_gust_speed, $av_wind_direction, $rainfall, $av_ambient_temp, $av_ground_temp, $av_humidity, $av_pressure, $av_power, $lower);
+        if ( false===$rc ) {
+            die(
+                '{
+                    "status":' . http_response_code(500) . ',
+                    "msg": "Weather data could not be logged. The server returned the following error message: bind_param() failed: "' . mysqli_error($link) . '
+                }'
+            );
+        }
         $stmt->execute();
 
         $stmt->close();

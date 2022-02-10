@@ -15,7 +15,7 @@ var graphs = {
       graphs.today.create()
       graphs.windDir.res(res.data.today.wind_direction)
       graphs.windDir.create()
-      graphs.week.res(res.data.week.ambient_temp, res.data.week.ground_temp, res.data.week.wind_speed, res.data.week.gust_speed, res.data.week.pressure, res.data.week.humidity, res.data.week.rainfall, res.data.week.power)
+      graphs.week.res(res.data.week.ambient_temp, res.data.week.ground_temp, res.data.week.wind_speed, res.data.week.gust_speed, res.data.week.pressure, res.data.week.humidity, res.data.week.rainfall, res.data.week.power, res.data.week.labels)
       graphs.week.create()
     };
     xhttp.open("GET", "api/select/graphs/");
@@ -373,7 +373,7 @@ var graphs = {
     labels: []
   },
   week: {
-    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall, res_power){
+    res: function(res_ambient_temp, res_ground_temp, res_wind_speed, res_gust_speed, res_pressure, res_humidity, res_rainfall, res_power, res_labels){
       const resArrays = {
         ambient_temp: res_ambient_temp.split(","), //"1,2,3,4" to resArray ["1","2","3","4"]
         ground_temp: res_ground_temp.split(","),
@@ -382,7 +382,8 @@ var graphs = {
         pressure: res_pressure.split(","),
         humidity: res_humidity.split(","),
         rainfall: res_rainfall.split(","),
-        power: res_power.split(",")
+        power: res_power.split(","),
+        labels: res_labels.split(",")
       }
       for (var x of resArrays.ambient_temp) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.week.data.ambient_temp.push(parseFloat(x));
@@ -408,14 +409,8 @@ var graphs = {
       for (var x of resArrays.power) { //takes each element of resArray and coverts it to point and pushes into the data array
         graphs.week.data.power.push(parseFloat(x));
       }
-
-      for (let days = 0; days < (graphs.week.data.ground_temp.length / 24); days++) {
-        var strDays = days.toString();
-        for (let hours = 0; hours < 24; hours++) {
-          var strHours = hours.toString();
-          if (strHours.length == 1) strHours = "0" + strHours;
-          graphs.week.labels.push("Day " + strDays + " " + strHours + ":00");
-        }
+      for (var x of resArrays.labels) { //takes each element of resArray and coverts it to point and pushes into the data array
+        graphs.week.labels.push(x);
       }
     },
     create: function(){
@@ -545,7 +540,7 @@ var graphs = {
                 ticks: {
                   callback: function(val, index) {
                     var label = this.getLabelForValue(val)
-                    if (label.endsWith('00')) {
+                    if (label.endsWith('12:00') || label.endsWith('00:00')) {
                       return this.getLabelForValue(val)
                     } else {
                       return null //don't show label if not on the hour

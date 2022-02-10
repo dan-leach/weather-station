@@ -1,14 +1,14 @@
 <?php
     $error = "";
 
-    require '../link.php';
-    if($link === false){
-        $error += "Graph data could not be selected from databse. The server returned the following error message: " . mysqli_connect_error();
-    }
-
     require '../../consolidate/getTimes.php';
     if ($backfillIsNeeded) {
         require '../../consolidate/hourlyBackfill.php';
+    }
+
+    require '../link.php';
+    if($link === false){
+        $error += "Graph data could not be selected from database. The server returned the following error message: " . mysqli_connect_error();
     }
 
     $today = date('Y-m-d');
@@ -87,7 +87,8 @@
                     "pressure":"' . $pressure_week . '",
                     "humidity":"' . $humidity_week . '",
                     "rainfall":"' . $rainfall_week . '",
-                    "power":"' . $power_week . '"
+                    "power":"' . $power_week . '",
+                    "labels":"' . $labels . '"
                 }
             },
             "backfillIsNeeded":"' . $backfillIsNeeded . '",
