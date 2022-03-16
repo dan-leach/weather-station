@@ -222,9 +222,5 @@
         }
     ';
     echo $output;
-    
 
-    $log = fopen("insert_log", "a");
-    fwrite($log, $output);
-    fclose($log);
 ?>
