@@ -1,4 +1,73 @@
-[2022-02-06 02:05:20] station: Wind vane open circuit
-[2022-02-06 04:37:12] station: Wind vane open circuit
-[2022-02-07 20:56:02] station: Upload error: Response 500Internal Server Error
-[2022-02-09 19:37:05] station: scp copy of data from BHBPV failed
+[2022-03-02 12:51:04] station: Upload error: Response 500Internal Server Error
+[2022-03-02 13:04:08] station: Upload error: Response 500Internal Server Error
+[2022-03-02 13:05:06] station: Upload error: Response 500Internal Server Error
+[2022-03-13 12:08:12] station: scp copy of data from BHBPV failed
+[2022-03-13 17:30:17] station: Unspecified non-fatal station error - see logfile
+[2022-03-13 17:31:16] station: Unspecified non-fatal station error - see logfile
+[2022-03-13 20:18:16] station: Unspecified non-fatal station error - see logfile
+[2022-03-13 20:19:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:20:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:21:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:22:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:23:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:24:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:25:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:26:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:27:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:28:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:29:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:30:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:31:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:32:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:33:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:34:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:35:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:36:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:37:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:38:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:39:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:40:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:41:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:42:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:43:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:44:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:45:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:46:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:47:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:48:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:49:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:50:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:51:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:52:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:53:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:54:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:55:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:56:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:57:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:58:05] station: scp copy of data from BHBPV failed
+[2022-03-13 20:59:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:00:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:01:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:02:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:03:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:04:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:11:05] station: scp copy of data from BHBPV failed
+[2022-03-13 21:15:16] station: Unspecified non-fatal station error - see logfile
+[2022-03-14 15:35:05] station: scp copy of data from BHBPV failed
+[2022-03-15 12:58:16] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 09:12:22] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 09:14:24] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 09:16:05] station: scp copy of data from BHBPV failed
+[2022-03-16 09:20:18] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 09:56:17] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:26:10] station: scp copy of data from BHBPV failed
+[2022-03-16 10:28:22] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:36:26] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:39:23] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:40:22] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:42:28] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:45:10] station: scp copy of data from BHBPV failed
+[2022-03-16 10:48:22] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 10:50:17] station: Unspecified non-fatal station error - see logfile
+[2022-03-16 11:52:05] station: scp copy of data from BHBPV failed
+[2022-03-16 12:44:44] station: Params upload failed

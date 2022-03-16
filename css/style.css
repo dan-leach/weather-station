@@ -1,6 +1,27 @@
 .centered {
     text-align: center;
 }
+.status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+.errors {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+@media only screen and (max-width: 700px) {
+    .status, .errors {
+        position: relative;
+    }
+}
+.title {
+    max-width: 65%;
+    margin: auto;
+}
 .log {
     font-size: small;
 }
@@ -48,4 +69,7 @@ h4 {
 }
 @media (min-width: 768px) {  
     .monitorSub {font-size:1rem;} /*1rem = 16px*/
+}
+.flex-column{
+    min-width: 33%;
 }

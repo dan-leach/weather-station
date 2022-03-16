@@ -1,8 +1,8 @@
 <?php
     $source = 'undefined';
     $stack = 'undefined';
-    if (isset($_GET["source"])) $source = filter_var($_GET["source"], FILTER_SANITIZE_STRING);
-    if (isset($_GET["stack"])) $stack = filter_var($_GET["stack"], FILTER_SANITIZE_STRING);
+    if (isset($_GET["source"])) $source = htmlspecialchars($_GET["source"]);
+    if (isset($_GET["stack"])) $stack = htmlspecialchars($_GET["stack"]);
     $now = date('Y-m-d H:i:s');
     $output = "[" . $now . "] ". $source . ": " .$stack . "\n";
     $log = fopen("../" . $source . "_errors", "a");

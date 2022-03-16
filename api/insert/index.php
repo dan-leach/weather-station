@@ -17,104 +17,112 @@
     class Weather { //Class of functions each returning values of each expected parameter following sanitisation. Returns -1 for any undefined expected parameters.
         function submissionID(){
             if (isset($_GET["datetime"])) {
-                return filter_var($_GET["datetime"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["datetime"]);
+            } else {
+                return -1;
+            }
+        }
+        function datetime(){
+            if (isset($_GET["datetime"])) {
+                return date("Y-m-d H:i:s", htmlspecialchars($_GET["datetime"]));
             } else {
                 return -1;
             }
         }
         function version(){
             if (isset($_GET["version"])) {
-                return filter_var($_GET["version"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["version"]);
             } else {
                 return -1;
             }
         }
         function comment(){
             if (isset($_GET["comment"])) {
-                return filter_var($_GET["comment"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["comment"]);
             } else {
                 return "";
             }
         }
         function wind_speed(){
             if (isset($_GET["wind_speed"])) {
-                return filter_var($_GET["wind_speed"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["wind_speed"]);
             } else {
                 return -1;
             }
         }
         function gust_speed(){
             if (isset($_GET["gust_speed"])) {
-                return filter_var($_GET["gust_speed"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["gust_speed"]);
             } else {
                 return -1;
             }
         }
         function wind_direction(){
             if (isset($_GET["wind_direction"])) {
-                return filter_var($_GET["wind_direction"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["wind_direction"]);
             } else {
                 return -1;
             }
         }
         function rainfall(){
             if (isset($_GET["rainfall"])) {
-                return filter_var($_GET["rainfall"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["rainfall"]);
             } else {
                 return -1;
             }
         }
         function ambient_temp(){
             if (isset($_GET["ambient_temp"])) {
-                return filter_var($_GET["ambient_temp"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["ambient_temp"]);
             } else {
                 return -1;
             }
         }
         function internal_temp(){
             if (isset($_GET["internal_temp"])) {
-                return filter_var($_GET["internal_temp"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["internal_temp"]);
             } else {
                 return -1;
             }
         }
         function ground_temp(){
             if (isset($_GET["ground_temp"])) {
-                return filter_var($_GET["ground_temp"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["ground_temp"]);
             } else {
                 return -1;
             }
         }
         function humidity(){
             if (isset($_GET["humidity"])) {
-                return filter_var($_GET["humidity"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["humidity"]);
             } else {
                 return -1;
             }
         }
         function pressure(){
             if (isset($_GET["pressure"])) {
-                return filter_var($_GET["pressure"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["pressure"]);
             } else {
                 return -1;
             }
         }
         function power(){
             if (isset($_GET["power"])) {
-                return filter_var($_GET["power"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["power"]);
             } else {
                 return -1;
             }
         }
         function energy(){
             if (isset($_GET["energy"])) {
-                return filter_var($_GET["energy"], FILTER_SANITIZE_STRING);
+                return htmlspecialchars($_GET["energy"]);
             } else {
                 return -1;
             }
         }
         function allParams(){
             $str = "submissionID: " . $this->submissionID() . ", ";
+            $str .= "datetime: " . $this->datetime() . ", ";
             $str .= "version: " . $this->version() . ", ";
             $str .= "comment: " . $this->comment() . ", ";
             $str .= "wind_speed: " . $this->wind_speed() . ", ";
@@ -135,6 +143,7 @@
     //generate log entries and parameters for SQL insert
     $update = new Weather();
     $submissionID = $update->submissionID();
+    $datetime = $update->datetime();
     $version = $update->version();
     $comment = $update->comment();
     $wind_speed = $update->wind_speed();
@@ -171,7 +180,7 @@
             );
     }
 
-    $stmt = $link->prepare("INSERT INTO tbl_weather (version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, internal_temp, ground_temp, humidity, pressure, power, energy, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $link->prepare("INSERT INTO tbl_weather (datetime, version, comment, wind_speed, gust_speed, wind_direction, rainfall, ambient_temp, internal_temp, ground_temp, humidity, pressure, power, energy, submissionID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ( false===$stmt ) {
         die(
             '{
@@ -181,7 +190,7 @@
             }'
         );
     }
-    $rc = $stmt->bind_param("ssssssssssssss", $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $internal_temp, $ground_temp, $humidity, $pressure, $power, $energy, $submissionID);
+    $rc = $stmt->bind_param("sssssssssssssss", $datetime, $version, $comment, $wind_speed, $gust_speed, $wind_direction, $rainfall, $ambient_temp, $internal_temp, $ground_temp, $humidity, $pressure, $power, $energy, $submissionID);
     if ( false===$rc ) {
         die(
             '{
@@ -208,8 +217,14 @@
     $output = '
         {
             "status":' . http_response_code(200) . ',
-            "submissionID":"' . $submissionID . '
+            "submissionID":"' . $submissionID . '",
+            "datetime":"' . $datetime . '"
         }
     ';
     echo $output;
+    
+
+    $log = fopen("insert_log", "a");
+    fwrite($log, $output);
+    fclose($log);
 ?>

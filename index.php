@@ -29,14 +29,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="centered display-3">Panborough Weather Station</h1>
-        <p class="centered" id="status" class="no-wrap"></p>
-        <p class="centered" id="error"></p>
         <div class="centered">
-            <button type="button" id="toggleAutoReload" class="btn btn-sm btn-success" onClick="ui.reload.toggle()">Auto-reload: ON</button>
-            <button type="button" id="clearLog" class="btn btn-sm btn-secondary" onClick="ui.log.empty()">Clear log</button>
-            <button type="button" id="emptyDatabase" class="btn btn-sm btn-danger" onClick="api.delete.all()">Empty database</button>
+            <h1 class="title display-4">Panborough Weather Station</h1>
         </div>
+        <div class="status centered">
+            <p id="status" class="no-wrap"></p>
+            <button type="button" id="toggleAutoReload" class="btn btn-sm btn-success" onClick="ui.reload.toggle()">Auto-reload: ON</button>
+        </div>
+        <p class="errors centered" id="error"></p>
         <hr>
         <?php include 'html/monitor.html'; ?>
         <hr>
