@@ -126,7 +126,12 @@ var graphs = {
                 borderWidth: 2,
                 backgroundColor: 'rgb(80, 60, 255)',
                 radius: 0.5,
-                yAxisID: 'yRainfall'
+                yAxisID: 'yRainfall',
+                spanGaps: true,
+                segment: {
+                  borderColor: ctx => graphs.utils.skipped(ctx, 'rgb(0,0,0,0.2)'),
+                  borderDash: ctx => graphs.utils.skipped(ctx, [6, 6]),
+                }
               },
               {
                 label: 'Pressure (mbar)',

@@ -17,9 +17,6 @@
     require '../wind/max.php';
     require '../power/max.php';
 
-    //get latest cumulative for today to update graph
-    require '../rainfall/graphToday.php';
-
     $sql = "SELECT *from tbl_weather ORDER BY eventID DESC LIMIT 1";
     $result = $link->query($sql);
     if ($result->num_rows > 0) {
@@ -52,7 +49,6 @@
                 "ground_temp":' . $ground_temp . ',
                 "humidity":' . $humidity . ',
                 "pressure":' . $pressure . ',
-                "rainfall":' . $cumRainToday . ',
                 "power":' . $power . ',
                 "energy":' . $energy . '
             },
