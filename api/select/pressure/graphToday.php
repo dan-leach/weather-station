@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT pressure, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT pressure, datetime FROM tbl_weather WHERE datetime >= '$today' ORDER BY datetime ASC";
 
     $pressure = "";
     $prevDecimalHours = 1; //set to one so that first decimal hours will always be less than this

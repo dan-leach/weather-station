@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT rainfall, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT rainfall, datetime FROM tbl_weather WHERE datetime >= '$today' ORDER BY datetime ASC";
 
     $rainfall = "";
     $cumRainToday = 0;

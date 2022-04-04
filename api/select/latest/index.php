@@ -22,7 +22,9 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            $datetime = $row['datetime'];
+            $dt = new DateTime($row['datetime'], new DateTimeZone('UTC'));
+            $dt->setTimezone(new DateTimeZone('Europe/London')); //datetime in database stored as UTC, convert to UK time to account for BST
+            $datetime = $dt->format("Y-m-d H:i:s");
             $wind_speed = $row['wind_speed'];
             $gust_speed = $row['gust_speed'];
             $wind_direction = $row['wind_direction'];

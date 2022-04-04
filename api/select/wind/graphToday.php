@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT wind_speed, gust_speed, wind_direction, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT wind_speed, gust_speed, wind_direction, datetime FROM tbl_weather WHERE datetime >= '$today' ORDER BY datetime ASC";
 
     $wind_speed = "";
     $gust_speed = "";

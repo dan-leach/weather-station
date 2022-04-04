@@ -1,6 +1,6 @@
 <?php
     
-    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather WHERE datetime >= '$today'";
+    $sql = "SELECT ambient_temp, ground_temp, datetime FROM tbl_weather WHERE datetime >= '$today' ORDER BY datetime ASC";
 
     $ambient_temp = "";
     $ground_temp = "";

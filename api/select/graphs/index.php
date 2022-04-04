@@ -11,8 +11,9 @@
         $error += "Graph data could not be selected from database. The server returned the following error message: " . mysqli_connect_error();
     }
 
-    $today = date('Y-m-d');
-    $midnight = new DateTime('midnight'); //creates datetime object with value of 00:00:00 today
+    $midnight = new DateTime('midnight', new DateTimeZone('Europe/London')); //creates datetime object with value of 00:00:00 today
+    $midnight->setTimezone(new DateTimeZone('UTC')); //account for difference between UTC and UK time during BST
+    $today = $midnight->format('Y-m-d H:i:s');
     require '../temperature/graphToday.php';
     require '../wind/graphToday.php';
     require '../pressure/graphToday.php';

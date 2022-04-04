@@ -12,7 +12,8 @@
             $humidity_week .= $row['humidity'] . ",";
 
             //also generate the datetime labels in this file
-            $dt = new DateTime($row['datetime']);
+            $dt = new DateTime($row['datetime'], new DateTimeZone('UTC'));
+            $dt->setTimezone(new DateTimeZone('Europe/London')); //datetime in database stored as UTC, convert to UK time to account for BST
             $labels .= $dt->format('l H:00') . ",";
         }
     } else {
